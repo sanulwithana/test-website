@@ -85,7 +85,7 @@ function About1(props) {
                                         <div key={idx.id} className="tf-counter ">
                                             <h6>{idx.title}</h6>
                                             <div className="content">
-                                                <span className="counter-number" data-to="2240" data-speed="2000" >{idx.number}</span>+
+                                                <span className="counter-number" data-to="1000" data-speed="2000" >{idx.number}</span>+
                                             </div>
                                         </div>  
                                     ))

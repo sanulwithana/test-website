@@ -30,7 +30,7 @@ const dataCollection = [
     {
         id: 1,
         img: img1,
-        title: 'sKELATON #01',
+        title: 'Hotdog Showdown',
     },
     {
         id: 2,
