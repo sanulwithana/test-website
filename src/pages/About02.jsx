@@ -3,7 +3,9 @@ import PageTitle from '../components/pagetitle/PageTitle';
 import About2 from '../components/about/About2';
 import Team from '../components/team/Team';
 import Partner from '../components/partner/Partner';
+
 import Footer2 from '../components/footer';
+
 import dataAbout from '../assets/fake-data/data-about';
 import dataTeam from '../assets/fake-data/data-team';
 import dataPartner from '../assets/fake-data/data-partner';
@@ -17,9 +19,7 @@ function About02(props) {
 
             <Team data={dataTeam} />
             <Partner data={dataPartner} />
-
-            <Footer2 />
-            
+            <Footer2 />           
         </div>
     );
 }

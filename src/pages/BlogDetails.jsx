@@ -1,4 +1,6 @@
+
 import React , {useState,useEffect} from 'react';
+
 import Footer from '../components/footer';
 import PageTitle from '../components/pagetitle/PageTitle';
 
@@ -10,6 +12,7 @@ import img5 from '../assets/images/blog/next-post.jpg'
 import rec1 from '../assets/images/blog/recent-post-1.jpg'
 import rec2 from '../assets/images/blog/recent-post-2.jpg'
 import rec3 from '../assets/images/blog/recent-post-3.jpg'
+
 import { Link, useParams } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react'
@@ -47,9 +50,7 @@ function BlogDetails(props) {
         getServerSideprops(slug).then((data) => setSinglePost(data)); // Fetch data and update singlePost state
     }, [slug]);
 
-    
-
-
+   
     const [datarecent] = useState([
         {
             id: 1,
@@ -73,6 +74,7 @@ function BlogDetails(props) {
             time: '20 Jun 2022'
         },
     ])
+
     if (!singlePost) {
         return  (<div className="title tf-container">
         <h3 >Enior Apple Employee Alleges Sexism At</h3>
@@ -90,6 +92,7 @@ function BlogDetails(props) {
                         <div className="col-xl-9 col-lg-8 col-md-12">
                             <div className="detail-inner">
                                 <div className="image">
+
                                     <img src={singlePost.mainImage.asset.url} alt="Binabox" />
                                 </div>
 
@@ -109,6 +112,7 @@ function BlogDetails(props) {
                                         <path d="M7 3L7 6" stroke="#21E786" strokeWidth="2" strokeLinecap="round"/>
                                         <path d="M17 3L17 6" stroke="#21E786" strokeWidth="2" strokeLinecap="round"/>
                                         </svg>                                        
+
                                        {singlePost.publishedAt}</span>
                                 </div>
         
@@ -123,7 +127,9 @@ function BlogDetails(props) {
                                         <div className="star"><i className="fas fa-star"></i><span>8.5/ 10</span></div>
                                         <h6 className="name">Markout Corporation</h6>
                                     </div>
+
                                 </div> */}
+
                                 <div className="image style-2">
                                     <img className="mr20" src={img2} alt="Binabox" />
                                     <img src={img3} alt="Binabox" />

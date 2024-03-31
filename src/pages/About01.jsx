@@ -18,8 +18,8 @@ function About01(props) {
             <Team2 data={dataTeam} />
 
             <Partner data={dataPartner} />
-
             <Footer2 />
+
             
         </div>
     );

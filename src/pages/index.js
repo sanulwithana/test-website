@@ -33,6 +33,7 @@ import Testimonials from "./Testimonials";
 
 
 const routes = [
+
   { path: '/', component: <Home01/>},
   // { path: '/home-v2', component: <Home02 />},
   // { path: '/home-v3', component: <Home03 />},
@@ -60,6 +61,7 @@ const routes = [
 
   // { path: '/blog-details', component: <BlogDetails />},
   { path: '/blog/:slug', component: <BlogDetails />},
+
 
   { path: '/contact', component: <Contact />},
 
