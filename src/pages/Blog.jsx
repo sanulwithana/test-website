@@ -1,14 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
 import Footer2 from '../components/footer';
-
 import client from '../services/client'
 import data from '../assets/fake-data/data-blog'
 import { Link } from 'react-router-dom';
 
 
 function Blog(props) {
-
     const [postData, setPostData] = useState([]);
     const [searchKey, setSearchKey] = useState('');
 
@@ -39,7 +37,6 @@ useEffect(() => {
     // const handleSearchResults = () => {
     //  //handle search inputs
     // };
-
     // Clear search and show all blogs
     // const handleClearSearch = () => {
     //   blogList().then((res) => {
@@ -50,13 +47,10 @@ useEffect(() => {
 
     // function to get selected blog content
 
-
     return (
         <div>
 
             <PageTitle title='Explore' />
-=======
-
 
 
             <section className="tf-blog">
@@ -74,7 +68,6 @@ useEffect(() => {
                                     <article className="tf-blog-item">
                                         <div className="image">
                                             <Link to={"/blog/" + post.slug.current} key={post.slug.current}><img src={post.mainImage.asset.url} alt={post.mainImage.alt} /></Link>
-
                                             <Link to="#" className="category">NFT</Link>
                                         </div>
                                         <div className="meta">
@@ -124,7 +117,6 @@ useEffect(() => {
             </section>
 
             <Footer2 />
-
 
             
         </div>

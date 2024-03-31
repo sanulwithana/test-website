@@ -2,7 +2,6 @@ const menus = [
     {
         id: 1,
         name: 'Home',
-
         links: '/',
     },
     {
@@ -30,31 +29,8 @@ const menus = [
         ]
     },
     {
-        id: 4,
-        name: 'Road Map',
-        links: '#',
-        namesub: [
-            {
-                id: 1,
-                sub: 'Road Map v1',
-                links: '/roadmap-v1'
-            },
-            {
-                id: 2,
-                sub: 'Road Map v2',
-                links: '/roadmap-v2'
-            },
-            {
-                id: 3,
-                sub: 'Road Map v3',
-                links: '/roadmap-v3'
-            },
-
-        ],
-    },
-    {
-        id: 5,
-        name: 'Pages',
+        id: 3,
+        name: 'Avenues',
         links: '#',
         namesub: [
             {
@@ -110,7 +86,6 @@ const menus = [
         ],
     },
     {
-
         id: 4,
         name: 'Blog',
         links: '/blog',
@@ -118,7 +93,6 @@ const menus = [
 
     {
         id: 5,
-
         name: 'Contact Us',
         links: '/contact',
     },

@@ -74,7 +74,6 @@ function BlogDetails(props) {
             time: '20 Jun 2022'
         },
     ])
-
     if (!singlePost) {
         return  (<div className="title tf-container">
         <h3 >Enior Apple Employee Alleges Sexism At</h3>
@@ -92,7 +91,6 @@ function BlogDetails(props) {
                         <div className="col-xl-9 col-lg-8 col-md-12">
                             <div className="detail-inner">
                                 <div className="image">
-
                                     <img src={singlePost.mainImage.asset.url} alt="Binabox" />
                                 </div>
 
@@ -112,7 +110,6 @@ function BlogDetails(props) {
                                         <path d="M7 3L7 6" stroke="#21E786" strokeWidth="2" strokeLinecap="round"/>
                                         <path d="M17 3L17 6" stroke="#21E786" strokeWidth="2" strokeLinecap="round"/>
                                         </svg>                                        
-
                                        {singlePost.publishedAt}</span>
                                 </div>
         
