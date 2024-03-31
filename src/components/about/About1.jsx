@@ -13,7 +13,7 @@ function About1(props) {
 
     const [dataBlock] = useState(
         {
-            heading: 'ABOUT US',
+            heading: 'WHO WE ARE & WHAT WE DO',
             desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae cat cupidatat non proident, sunt in culpa qui officia dese runt mollit anim id est laborum velit esse cillum dolore eu fugiat nulla pariatu epteur sint occaecat'
 
         }
@@ -23,13 +23,13 @@ function About1(props) {
     const [dataCounter] = useState([
         {
             id: 1,
-            title: 'Total Iteam',
-            number: '2240',
+            title: 'Total Membership',
+            number: '1000',
         },
         {
             id: 2,
-            title: 'Profiles Whitelisted',
-            number: '1000',
+            title: 'Projects Completed',
+            number: '100',
         },
     ])
     return (

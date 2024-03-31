@@ -18,6 +18,7 @@ import img5 from '../../assets/images/slider/slider-10.jpg'
 import img6 from '../../assets/images/slider/slider-11.jpg'
 import Button from '../button/Button';
 import Button02 from '../button/Button02';
+import ImageSlider from '../slider/imageSlider';
 
 Banner01.propTypes = {
     data : PropTypes.array,
@@ -25,7 +26,11 @@ Banner01.propTypes = {
 
 function Banner01(props) {
     const {data} = props;
-    
+    const images = [
+        "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+        "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
+        "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+      ];
     return (
         <section className="tf-slider">
             <div className="container-fluid">
@@ -39,6 +44,7 @@ function Banner01(props) {
                             className="slider-home"
                             loop= {true}
                         >
+                          
                         {
                             data.slice(0,2).map(idx => (
                                 <SwiperSlide key={idx.id}>
@@ -53,6 +59,7 @@ function Banner01(props) {
                                                             <span>Binabox</span>
                                                             <span>Music</span>
                                                             <span>NFT</span>
+                                                        
                                                         </div>
                                                     </div>
                                                 </div>
@@ -67,18 +74,19 @@ function Banner01(props) {
 
                                             <div className="content-right ">
                                                 <div className="content-slide">
-                                                
+                                               
+                                              
                                                     <div className="image">
-                                                        <img src={img1} alt="Binabox" className="img-slider-1" />
-                                                        <img src={img4} alt="Binabox" className="fadeInClass" />
+                                                        <img src={images[1]} alt="Binabox" className="img-slider-1" />
+                                                        <img src={images[2]} alt="Binabox" className="fadeInClass" />
                                                     </div>
                                                     <div className="image s1">
-                                                        <img src={img2} alt="Binabox" className="img-slider-1" />
-                                                        <img src={img5} alt="Binabox" className="fadeInClass" />
+                                                        <img src={images[0]} alt="Binabox" className="img-slider-1" />
+                                                        <img src={images[1]} alt="Binabox" className="fadeInClass" />
                                                     </div>
                                                     <div className="image s1">
-                                                        <img src={img3} alt="Binabox" className="img-slider-1" />
-                                                        <img src={img6} alt="Binabox" className="fadeInClass" />
+                                                        <img src={images[0]} alt="Binabox" className="img-slider-1" />
+                                                        <img src={images[1]} alt="Binabox" className="fadeInClass" />
                                                     </div>
 
                                                 </div>
@@ -94,7 +102,6 @@ function Banner01(props) {
                         
                     </div>
                     <div className="col-md-12">
-                        
                     </div>
                 </div>
             </div>

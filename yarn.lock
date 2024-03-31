@@ -1791,7 +1791,6 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.1.tgz#7ca168b6937818e9a74b47ac4e2112b2e1a024cf"
   integrity sha512-S3Kq8e7LqxkA9s7HKLqXGTGck1uwis5vAXan3FnU5yw1Ec5hsSGnq4s/UCaSqABPOnOTg7zASLyst7+ohgWexg==
 
-
 "@sanity/block-content-to-hyperscript@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@sanity/block-content-to-hyperscript/-/block-content-to-hyperscript-3.0.0.tgz#a8437b608daac9b7cc4124c490d345fa84d4a267"
@@ -1809,7 +1808,6 @@
   dependencies:
     "@sanity/block-content-to-hyperscript" "^3.0.0"
     prop-types "^15.6.2"
-
 
 "@sanity/client@^6.15.7":
   version "6.15.7"
@@ -1845,6 +1843,7 @@
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-1.0.2.tgz#1ff7259e9bad6bfca4169f21c53a4123f6ac78c3"
   integrity sha512-C4+jb2ny3ZbMgEkLd7Z3C75DsxcTEoE+axXQJsQ75ou0AKWGdVsP351hqK6mJUUxn5HCSlu3vznoh7Yljye4cQ==
+
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.51.tgz#645f33fe4e02defe26f2f5c0410e1c094eac7f5f"
@@ -2043,6 +2042,11 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
+
+"@tweenjs/tween.js@^18.6.4":
+  version "18.6.4"
+  resolved "https://registry.yarnpkg.com/@tweenjs/tween.js/-/tween.js-18.6.4.tgz#40a3d0a93647124872dec8e0fd1bd5926695b6ca"
+  integrity sha512-lB9lMjuqjtuJrx7/kOkqQBtllspPIN+96OvTCeJ2j5FEzinoAXTdAMFnDAQT1KVPRlnYfBrqxtqP66vDM40xxQ==
 
 "@types/aria-query@^5.0.1":
   version "5.0.4"
@@ -3358,8 +3362,6 @@ browser-process-hrtime@^1.0.0:
   resolved "https://registry.yarnpkg.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
-
-
 browser-split@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/browser-split/-/browser-split-0.0.0.tgz#41419caef769755929dd518967d3eec0a6262771"
@@ -3585,7 +3587,6 @@ class-list@~0.1.0, class-list@~0.1.1:
   integrity sha512-zqR0uW+VsLtyQhixBhkdQ+z6B8+Y8HTh28kdSVjJ4zTTKM7Xz2asAQSya9VI6m/34F6N6Ktm0mrchKB+E5a8Xw==
   dependencies:
     indexof "0.0.1"
-
 
 classlist-polyfill@^1.0.3:
   version "1.2.0"
@@ -5767,7 +5768,6 @@ hpack.js@^2.1.6:
     readable-stream "^2.0.1"
     wbuf "^1.1.0"
 
-
 html-element@^2.0.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/html-element/-/html-element-2.3.1.tgz#5feb23dd5226467ef8c2faec51a5bf29c4ef5440"
@@ -5920,7 +5920,6 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-
 hyperscript@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/hyperscript/-/hyperscript-2.0.2.tgz#3839cba45554bdfe27bb81c2142d1684f8135af5"
@@ -5929,7 +5928,6 @@ hyperscript@^2.0.2:
     browser-split "0.0.0"
     class-list "~0.1.0"
     html-element "^2.0.0"
-
 
 iconv-lite@0.4.24:
   version "0.4.24"
@@ -6002,7 +6000,6 @@ indent-string@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-4.0.0.tgz#624f8f4497d619b2d9768531d58f4122854d7251"
   integrity sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==
-
 
 indexof@0.0.1:
   version "0.0.1"
@@ -9139,6 +9136,14 @@ react-scripts@5.0.0:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-slideshow-image@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-slideshow-image/-/react-slideshow-image-4.3.1.tgz#bb3be0d9ebb99a6583207c52be6cc568c2a1a4f2"
+  integrity sha512-05xi3ySznTcolc/1uNyNYR/zNqphSePYfogyThZVYzqHVRrXoTpuCdSN8nECsJlg6muxciZr5AxVgJDR5S4sMA==
+  dependencies:
+    "@tweenjs/tween.js" "^18.6.4"
+    resize-observer-polyfill "^1.5.1"
+
 react-tabs@^5.1.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-tabs/-/react-tabs-5.2.0.tgz#31ce628718f37d768ae725d9e2eaabed34b13488"
@@ -9376,6 +9381,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==
+
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-cwd@^3.0.0:
   version "3.0.0"

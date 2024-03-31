@@ -25,9 +25,13 @@ function Home01(props) {
         <div className="home-1">
             <Banner01 data={dataBanner} />
             {/* <Logo /> */}
-            <About2 data={dataAbout} />
+            <About1 data={dataAbout} />
+            <div className="tf-heading wow fadeInUp">
+                <h2 className="heading">Our Signature Projects</h2>
+            </div>
             <Collection03 data={dataCollection} />
-            <Work data={dataWork} />
+           
+            {/* <Work data={dataWork} /> */}
             <Faqs data={dataFaqs} />
             {/* <Partner data={dataPartner} /> */}
            <Footer2 />

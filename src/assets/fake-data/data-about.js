@@ -6,22 +6,35 @@ const dataAbout = [
 
     {
         id: 1,
-        title : 'HIGH QUAILITY',
+        title : 'CLUB SERVICE',
         text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     {
         id: 2,
-        title : 'biG cOLLECTION',
+        title : 'COMMUNITY SERVICE',
         text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     {
         id: 3,
-        title : 'TOP RESOURCE',
+        title : 'PROFESSIONAL DEVELOPMENT',
         text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     {
         id: 4,
-        title : 'BIG COMMUNITY',
+        title : 'INTERNATIONAL SERVICE',
+        text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },
+    {
+        id: 5,
+        title : 'PUBLIC RELATIONS',
+        text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },{
+        id: 6,
+        title : 'SPORTS',
+        text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },{
+        id: 7,
+        title : 'DIGITAL COMMUNICATION',
         text : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     
