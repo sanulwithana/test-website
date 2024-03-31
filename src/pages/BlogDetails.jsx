@@ -1,4 +1,6 @@
-import React , {useState} from 'react';
+
+import React , {useState,useEffect} from 'react';
+
 import Footer from '../components/footer';
 import PageTitle from '../components/pagetitle/PageTitle';
 
@@ -10,11 +12,45 @@ import img5 from '../assets/images/blog/next-post.jpg'
 import rec1 from '../assets/images/blog/recent-post-1.jpg'
 import rec2 from '../assets/images/blog/recent-post-2.jpg'
 import rec3 from '../assets/images/blog/recent-post-3.jpg'
-import { Link } from 'react-router-dom';
 
+import { Link, useParams } from 'react-router-dom';
+import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react'
+import client from '../services/client'
 
+const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+    return builder.image(source);
+}
+
+export const getServerSideprops = async (slug) => {
+    const query = `*[slug.current == "${slug}"]{
+        title,
+        slug,
+        publishedAt,
+        mainImage{
+          asset->{
+            _id,
+            url
+          }
+        },
+        body
+      }`
+    const posts = await client.fetch(query);
+    console.log('posts >>>',posts);
+    return posts[0];
+}
 
 function BlogDetails(props) {
+    const [singlePost, setSinglePost] = useState(null); // Initialize singlePost with null
+    const { slug } = useParams();
+
+    useEffect(() => {
+        getServerSideprops(slug).then((data) => setSinglePost(data)); // Fetch data and update singlePost state
+    }, [slug]);
+
+   
     const [datarecent] = useState([
         {
             id: 1,
@@ -38,10 +74,17 @@ function BlogDetails(props) {
             time: '20 Jun 2022'
         },
     ])
+
+    if (!singlePost) {
+        return  (<div className="title tf-container">
+        <h3 >Enior Apple Employee Alleges Sexism At</h3>
+        <div className="category">GAMING</div>
+    </div>);
+    }
     return (
         <div>
 
-            <PageTitle title='Blog Details' />
+            <PageTitle title={singlePost.title} />
 
             <section className="tf-blog">
                 <div className="tf-container">
@@ -49,7 +92,8 @@ function BlogDetails(props) {
                         <div className="col-xl-9 col-lg-8 col-md-12">
                             <div className="detail-inner">
                                 <div className="image">
-                                    <img src={img1} alt="Binabox" />
+
+                                    <img src={singlePost.mainImage.asset.url} alt="Binabox" />
                                 </div>
 
                                 <div className="title">
@@ -68,20 +112,24 @@ function BlogDetails(props) {
                                         <path d="M7 3L7 6" stroke="#21E786" strokeWidth="2" strokeLinecap="round"/>
                                         <path d="M17 3L17 6" stroke="#21E786" strokeWidth="2" strokeLinecap="round"/>
                                         </svg>                                        
-                                        20 Jun 2022</span>
+
+                                       {singlePost.publishedAt}</span>
                                 </div>
         
                                 <div className="content-inner mb24">
-                                    <p>The Basilisks that players collect are represented with NFTs on Ethereum’s blockchain with real-world value. Players use the Basilisks they have gathered to battle other players to win ether (ETH).</p>
-                                    <p>In Balthazar Dragons, players are immersed in a 3D open world to explore and capture dragon-like beasts called Basilisks.  Balthazar Dragons is an upcoming fantasy role-playing game developed on the Ethereum blockchain by a decentralized autonomous organization (DAO) called the Balthazar DAO.</p>
+                                    <BlockContent blocks={singlePost.body} projectId={'eeksv8lg'} dataset={'production'}/>
+                                    {/* <p>The Basilisks that players collect are represented with NFTs on Ethereum’s blockchain with real-world value. Players use the Basilisks they have gathered to battle other players to win ether (ETH).</p>
+                                    <p>In Balthazar Dragons, players are immersed in a 3D open world to explore and capture dragon-like beasts called Basilisks.  Balthazar Dragons is an upcoming fantasy role-playing game developed on the Ethereum blockchain by a decentralized autonomous organization (DAO) called the Balthazar DAO.</p> */}
                                 </div>
-                                <div className="post-infor">
+                                {/* <div className="post-infor">
                                     <div className="title">“The First Huge Metaverse Arena To Arrange Live Sports, Hang Out And Even Make Bets And Wagers”</div>
                                     <div className="content">
                                         <div className="star"><i className="fas fa-star"></i><span>8.5/ 10</span></div>
                                         <h6 className="name">Markout Corporation</h6>
                                     </div>
-                                </div>
+
+                                </div> */}
+
                                 <div className="image style-2">
                                     <img className="mr20" src={img2} alt="Binabox" />
                                     <img src={img3} alt="Binabox" />

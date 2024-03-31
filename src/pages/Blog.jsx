@@ -1,33 +1,45 @@
 import React,{useState,useEffect} from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
-import Footer from '../components/footer';
+import Footer2 from '../components/footer';
+
 import client from '../services/client'
 import data from '../assets/fake-data/data-blog'
 import { Link } from 'react-router-dom';
 
 
 function Blog(props) {
-    const [blog, setBlog] = useState([]);
+
+    const [postData, setPostData] = useState([]);
     const [searchKey, setSearchKey] = useState('');
 
 useEffect(() => {
-  client.fetch(``)
-
-  return () => {
-    second
-  }
-}, [third])
+  client.fetch(`*[_type=="post"]{
+    title,
+    slug,
+    publishedAt,
+    mainImage{
+        asset->{
+            _id,
+            url
+        },
+        alt
+    }
+  }`).then((data)=> setPostData(data)).catch(console.error);
+    console.log('data>>>',postData);
+ 
+}, [])
 
 
     // Search submit
-    const handleSearchBar = (e) => {
-      e.preventDefault();
-      handleSearchResults();
-    };
-    // Search for blog by category
-    const handleSearchResults = () => {
-     //handle search inputs
-    };
+    // const handleSearchBar = (e) => {
+    //   e.preventDefault();
+    //   handleSearchResults();
+    // };
+    // // Search for blog by category
+    // const handleSearchResults = () => {
+    //  //handle search inputs
+    // };
+
     // Clear search and show all blogs
     // const handleClearSearch = () => {
     //   blogList().then((res) => {
@@ -37,13 +49,14 @@ useEffect(() => {
     // };
 
     // function to get selected blog content
- const BlogContent = (id) => {
-    data(id);
-  }
+
+
     return (
         <div>
 
-            <PageTitle title='Blog' />
+            <PageTitle title='Explore' />
+=======
+
 
 
             <section className="tf-blog">
@@ -55,12 +68,13 @@ useEffect(() => {
         handleSearchKey={(e) => setSearchKey(e.target.value)}
       /> */}
                     <div className="row">
-                        {
-                            data.map(idx => (
-                                <div key={idx.id} className="col-xl-4 col-lg-6 col-md-6">
+                        {postData && 
+                            postData.map((post,idx) => (
+                                <div key={idx} className="col-xl-4 col-lg-6 col-md-6">
                                     <article className="tf-blog-item">
                                         <div className="image">
-                                            <Link to="/blog-details"><img src={idx.img} alt="Binabox" /></Link>
+                                            <Link to={"/blog/" + post.slug.current} key={post.slug.current}><img src={post.mainImage.asset.url} alt={post.mainImage.alt} /></Link>
+
                                             <Link to="#" className="category">NFT</Link>
                                         </div>
                                         <div className="meta">
@@ -75,14 +89,15 @@ useEffect(() => {
                                                 <path d="M5.83398 2.5L5.83398 5" stroke="#ED3659" strokeWidth="2" strokeLinecap="round"/>
                                                 <path d="M14.166 2.5L14.166 5" stroke="#ED3659" strokeWidth="2" strokeLinecap="round"/>
                                                 </svg>
-                                                {idx.time}</span>
+                                               {post.publishedAt}</span>
                                         </div>
                 
-                                        <h3 className="title"><Link to="/blog-details">{idx.title}</Link></h3>
+                                        <h3 className="title"><Link to="#">{post.title}</Link></h3>
                                     
-                                        <p className="content">{idx.text}</p>
+                                        <p className="content">{post.title}</p>
 
-                                        <Link to="/item-details" className="btn-readmore">READ MORE <i className="fal fa-long-arrow-right"></i></Link>
+                                        <Link to={`/blog/${post.slug.current}`} key={post.slug.current} className="btn-readmore">READ MORE <i className="fal fa-long-arrow-right"></i></Link>
+
                                         
                                         
                                     </article>
@@ -108,7 +123,8 @@ useEffect(() => {
                 </div>
             </section>
 
-            <Footer />
+            <Footer2 />
+
 
             
         </div>

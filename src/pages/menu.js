@@ -2,29 +2,19 @@ const menus = [
     {
         id: 1,
         name: 'Home',
-        links: '#',
-        namesub: [
-            {
-                id: 1,
-                sub: 'Home 01',
-                links: '/'
-            },
-            {
-                id: 2,
-                sub: 'Home 02',
-                links: '/home-v2'
-            },
-            {
-                id: 3,
-                sub: 'Home 03',
-                links: '/home-v3'
-            },
 
-        ]
+        links: '/',
     },
     {
         id: 2,
         name: 'About',
+
+        links: '/about-v1',
+    },
+    {
+        id: 3,
+        name: 'Avenues',
+
         links: '#',
         namesub: [
             {
@@ -120,28 +110,15 @@ const menus = [
         ],
     },
     {
-        id: 6,
+
+        id: 4,
         name: 'Blog',
-        links: '#',
-
-        namesub: [
-            {
-                id: 1,
-                sub: 'Blog',
-                links: '/blog'
-            },
-            {
-                id: 2,
-                sub: 'Blog Details',
-                links: '/blog-details'
-            },
-
-
-        ],
+        links: '/blog',
     },
 
     {
-        id: 7,
+        id: 5,
+
         name: 'Contact Us',
         links: '/contact',
     },

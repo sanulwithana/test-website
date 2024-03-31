@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { API_BASE_URL } from '@env';
+
+
+
 
 // Create a list to hold the request queue
 const refreshAndRetryQueue = [];
@@ -7,10 +9,11 @@ const refreshAndRetryQueue = [];
 // Flag to prevent multiple token refresh requests
 let isRefreshing = false;
 
-const API_URL = API_BASE_URL;
+// const API_URL = API_BASE_URL;
 
 const AxiosBase = axios.create({
-  baseURL: API_URL,
+  baseURL: '',
+
   headers: {
     // 'Content-Type': 'application/json',
   },
