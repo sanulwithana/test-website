@@ -64,7 +64,8 @@ function Contact(props) {
                                         <textarea id="message" name="message" rows="4" placeholder="Message" tabIndex="4" aria-required="true" required=""></textarea>
                                     </fieldset>
                                 </div>
-                                <div className="btn-submit"><button className="tf-button style-2" type="submit">SEND MESSANGER</button></div>
+
+                                <div className="btn-submit"><button className="tf-button style-2" type="submit">SEND</button></div>
                             </form>
                         </div>
                     </div>

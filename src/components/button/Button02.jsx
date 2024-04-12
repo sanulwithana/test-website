@@ -9,7 +9,9 @@ Button02.propTypes = {
 function Button02(props) {
     const {title , path} = props;
     return (
-        <Link to={path} className="tf-button style-2">{title}</Link>
+
+        <Link onClick={path}  className="tf-button style-2">{title}</Link>
+
     );
 }
 

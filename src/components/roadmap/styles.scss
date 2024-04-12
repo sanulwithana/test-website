@@ -34,7 +34,7 @@
         }
         &:hover {
             &::after {
-                background: #21E786;
+                background: #f84364;
                 color: #141B22;
             }
         }
@@ -48,7 +48,7 @@
     .swiper-button-next {
         right: 46%;
         &::after {
-            background: #21E786;
+            background: #f84364;
             color: #141B22;
         }
     }
@@ -94,8 +94,8 @@
                 height: 0;
                 top: 0px;
                 left: 0px;
-                border-left: 5px solid #21E786;   
-                border-top: 5px solid #21E786;
+                border-left: 5px solid #f84364;   
+                border-top: 5px solid #f84364;
                
             }
             &::after {
@@ -107,8 +107,8 @@
                 height: 0;
                 bottom: 0px;
                 right: 0px;
-                border-right: 5px solid #21E786;
-                border-bottom: 5px solid #21E786;
+                border-right: 5px solid #f84364;
+                border-bottom: 5px solid #f84364;
                 
             }
             &.active,
@@ -189,8 +189,8 @@
             height: 0;
             top: 0px;
             left: 0px;
-            border-left: 5px solid #21E786;   
-            border-top: 5px solid #21E786;
+            border-left: 5px solid #f84364;   
+            border-top: 5px solid #f84364;
           
         }
         &::after {
@@ -202,8 +202,8 @@
             height: 0;
             bottom: 0px;
             right: 0px;
-            border-right: 5px solid #21E786;
-            border-bottom: 5px solid #21E786;
+            border-right: 5px solid #f84364;
+            border-bottom: 5px solid #f84364;
          
         }
         &.active,
@@ -323,10 +323,10 @@
             .shape-circle {
                 svg {
                     .fill-1 {
-                        fill: #21E786;   
+                        fill: #f84364;   
                     }
                     .fill-2 {
-                        fill: #21E786;   
+                        fill: #f84364;   
                     }
                 }
             }
@@ -449,7 +449,7 @@
         height: 2.4px !important;
         background: #434343 !important;
         & .swiper-pagination-progressbar-fill {
-            background: #21E786;
+            background: #f84364;
             height: 2.4px !important;
         }
     }
@@ -457,7 +457,7 @@
         right: 10px;
         &::after {
             content: '\f105';
-            color: #21E786;
+            color: #f84364;
         }
     }
     & .swiper-button-prev {
@@ -467,12 +467,12 @@
             color: var(--primary-color2);
         }
         &:hover::after {
-            color: #21E786;
+            color: #f84364;
         }
     }
     & .swiper-slide.swiper-slide-thumb-active {
         & .fill-pri {
-            fill: #21E786;
+            fill: #f84364;
         }
     }
 }

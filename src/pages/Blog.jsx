@@ -4,12 +4,40 @@ import Footer2 from '../components/footer';
 import client from '../services/client'
 import data from '../assets/fake-data/data-blog'
 import { Link } from 'react-router-dom';
+import Button from '../components/button/Button';
+import Button02 from '../components/button/Button02';
 
 
 function Blog(props) {
     const [postData, setPostData] = useState([]);
     const [searchKey, setSearchKey] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(15);
 
+    let lastPublishedAt = '' 
+    let lastId = ''
+    
+    async function fetchNextPage() {
+      if (lastId === null) {
+        return []
+      }
+    
+      await client.fetch(`*[_type == "post" && (
+          publishedAt > $lastPublishedAt
+          || (publishedAt == $lastPublishedAt && _id > $lastId)
+        )] | order(publishedAt) [0...20] {
+          _id, title, body, publishedAt
+        }`, {lastPublishedAt, lastId}).then((data)=> {
+            if (data.length > 0) {
+                lastPublishedAt = data[data.length - 1].publishedAt
+                lastId = data[data.length - 1]._id
+              } else {
+                lastId = null 
+              }
+              setPostData(prev => [...prev,...data])
+              return data
+        }).catch(console.error);
+    }
 useEffect(() => {
   client.fetch(`*[_type=="post"]{
     title,
@@ -101,15 +129,11 @@ useEffect(() => {
                         
                         <div className="col-md-12 ">
                             <div className="tf-pagination">
-                                <ul>
-                                    <li className="btn-page"><Link to="#" ><i className="fas fa-angle-left"></i></Link></li>
-                                    <li className="active"><Link to="#">2</Link></li>
-                                    <li><Link to="#" >3</Link></li>
-                                    <li><Link to="#">4</Link></li>
-                                    <li className="continue"><Link to="#">...</Link></li>
-                                    <li className="btn-page btn-next"><Link to="#"><i className="fas fa-angle-right"></i></Link></li>
-                                    </ul>
+                            <div className="btn-slider wow fadeInUp" data-wow-delay="0.8s">
+                                        <Button02 title='LOAD MORE' path={()=>fetchNextPage()} />
+                                    </div>
                             </div>
+                            
                         </div>                 
                         
                     </div>

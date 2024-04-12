@@ -22,18 +22,17 @@ function CommingSoon(props) {
                         <button className="tf-button" type="submit" id="subscribe-button">SIGN UP</button>
                     </form>
 
-                    <div className="group-btn">
-                        <Link to="/contact" className="tf-button discord" data-toggle="modal" data-target="#popup_bid"><i className="icon-fl-vt"></i><span>DISCORD</span></Link>
+
+                    {/* <div className="group-btn">
                         <Link to="/collection" className="tf-button">WHITELIST NOW</Link>
-                    </div>
+                    </div> */}
+
 
                     <ul className="social-item">
                         <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
                         <li><Link to="#"><i className="fab fa-facebook"></i></Link></li>
-                        <li><Link to="#"><i className="fab fa-telegram-plane"></i></Link></li>
                         <li><Link to="#"><i className="fab fa-youtube"></i></Link></li>
                         <li><Link to="#"><i className="icon-fl-tik-tok-2"></i></Link></li>
-                        <li><Link to="#"><i className="icon-fl-vt"></i></Link></li>
                     </ul>
                 </div>
         </section>
