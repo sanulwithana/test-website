@@ -19,6 +19,7 @@
     "react-bootstrap-accordion": "^1.0.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.0.0",
+    "react-loader-spinner": "^6.1.6",
     "react-modal-video": "^1.2.8",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",

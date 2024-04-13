@@ -6,6 +6,7 @@ import client from '../services/client'
 import { Link } from 'react-router-dom';
 import Button02 from '../components/button/Button02';
 import { useParams } from 'react-router-dom';
+import Loading from '../components/loader/loader';
 
 export const getServerSideprops = async (slug) => {
     const query = `*[slug.current == "${slug}"]{
@@ -265,10 +266,7 @@ function AvenueDetails() {
             </div>
         );
     }else{
-        return (<div className="title tf-container">
-        <h3 >Enior Apple Employee Alleges Sexism At</h3>
-        <div className="category">GAMING</div>
-    </div>);
+        return ( (<Loading/>));
     }
 
    

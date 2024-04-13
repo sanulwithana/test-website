@@ -9,6 +9,7 @@ import { Link, useParams } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react'
 import client from '../services/client'
+import Loading from '../components/loader/loader';
 
 const builder = imageUrlBuilder(client);
 
@@ -58,6 +59,7 @@ export const getServerSideprops = async (slug) => {
 export const getCatogaries = async () => {
     //get the catogary list ,plus the number of posts in each and a slug to go to the posts with all those catogaries
     const query = `*[_type == "category"]{
+        slug,
         title,
         "postcount": count(*[_type == "post" && references(^._id)])
       } | order(title asc)`
@@ -98,14 +100,17 @@ function BlogDetails(props) {
     useEffect(() => {
         async function fetchData() {
         getServerSideprops(slug).then((data) => {setSinglePost(data)}); 
-        getCatogaries().then((data)=>{setcatogaries(data)})    
+        getCatogaries().then((data)=>{
+            console.log(data);
+            setcatogaries(data)
+        })    
         getLatestPost().then((data)=>{setLatestPosts(data)})  
     };
         fetchData()
     }, [slug]);
 
    
-    if (singlePost != null && catogaries != null && latestPosts != null) {
+    if (singlePost  && catogaries  && latestPosts) {
         return (
             <div>
     
@@ -255,7 +260,7 @@ function BlogDetails(props) {
                                         <ul>
                                         {catogaries.map((category, index) => (
                                            <li key={index}>
-                                             <Link to="#">{`${category.title} (${category.postcount})`}</Link>
+                                             <Link  to={"/avenueDetail/" + category.slug.current} key={category.slug.current}>{`${category.title} (${category.postcount})`}</Link>
                                            </li>
                                          ))}
                                         </ul>
@@ -317,10 +322,7 @@ function BlogDetails(props) {
         );
        
     }else{
-        return  (<div className="title tf-container">
-        <h3 >Enior Apple Employee Alleges Sexism At</h3>
-        <div className="category">GAMING</div>
-    </div>);
+        return  (<Loading/>);
     }
 
     

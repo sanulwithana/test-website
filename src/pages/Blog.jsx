@@ -4,12 +4,13 @@ import Footer2 from '../components/footer/Footer2';
 import client from '../services/client'
 import { Link } from 'react-router-dom';
 import Button02 from '../components/button/Button02';
+import Loading from '../components/loader/loader';
 
 
 function Blog(props) {
     const [postData, setPostData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-
+    const [loading, setloading] = useState(true);
     const lastPublishedAtRef = useRef(null);
     const lastIdRef = useRef(null);
     
@@ -65,8 +66,9 @@ function Blog(props) {
                 console.log("datafirs", data)
                 setPostData(data);
             }
+            setloading(false)
         })
-        .catch(console.error);
+        .catch(console.error)
     }, []); // Empty dependency array ensures this useEffect only runs once on mount
 
     
@@ -142,6 +144,10 @@ const handleSubmit = async (event) => {
             console.error('Error fetching posts:', error);
         }
 };
+
+    if(loading){
+        return (<Loading/>)
+    }
 
     return (
         <div>
