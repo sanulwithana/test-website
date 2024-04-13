@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
 import Footer2 from '../components/footer';
 import client from '../services/client'
@@ -10,22 +10,16 @@ import Button02 from '../components/button/Button02';
 
 function Blog(props) {
     const [postData, setPostData] = useState([]);
-    const [searchKey, setSearchKey] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(15);
 
-    let lastPublishedAt = '' 
-    let lastId = ''
-    
-    async function fetchNextPage() {
-      if (lastId === null) {
-        return []
-      }
-    
-      await client.fetch(`*[_type == "post" && (
-          publishedAt > $lastPublishedAt
-          || (publishedAt == $lastPublishedAt && _id > $lastId)
-        )] | order(publishedAt) [0...3]{
+    const lastPublishedAtRef = useRef(null);
+    const lastIdRef = useRef(null);
+
+    useEffect(() => {
+        client.fetch(`*[_type=="post"] | order(publishedAt desc) [0...6]{
+            _id,
             title,
             slug,
             publishedAt,
@@ -36,53 +30,91 @@ function Blog(props) {
                 },
                 alt
             }
-          }`, {lastPublishedAt, lastId}).then((data)=> {
+        }`)
+        .then((data) => {
+          
             if (data.length > 0) {
-                lastPublishedAt = data[data.length - 1].publishedAt
-                lastId = data[data.length - 1]._id
-              } else {
-                lastId = null 
-              }
-              setPostData(prev => [...prev,...data])
-              return data
-        }).catch(console.error);
+                lastPublishedAtRef.current = data[data.length - 1].publishedAt;
+                lastIdRef.current = data[data.length - 1]._id;
+                console.log("datafirs", lastIdRef.current)
+                setPostData(data);
+            }
+        })
+        .catch(console.error);
+    }, []); // Empty dependency array ensures this useEffect only runs once on mount
+
+    
+    
+    async function fetchNextPage() {
+        console.log(lastIdRef)
+        if (!lastIdRef.current) {
+            return [];
+        }
+    
+        try {
+            const data = await client.fetch(`
+                *[_type == "post" && (
+                    publishedAt < $lastPublishedAt
+                    || (publishedAt == $lastPublishedAt && _id < $lastId)
+                )] 
+                | order(publishedAt desc, _id desc) [0...3]{
+                    title,
+                    slug,
+                    publishedAt,
+                    mainImage{
+                        asset->{
+                            _id,
+                            url
+                        },
+                        alt
+                    }
+                }`, 
+                { lastPublishedAt: lastPublishedAtRef.current, lastId: lastIdRef.current }
+            );
+    
+            if (data.length > 0) {
+                lastPublishedAtRef.current = data[data.length - 1].publishedAt;
+                lastIdRef.current = data[data.length - 1]._id;
+                setPostData(prev => [...prev, ...data]);
+            } else {
+                lastIdRef.current = null;
+            }
+    
+            return data;
+        } catch (error) {
+            console.error('Error fetching next page:', error);
+        }
     }
-useEffect(() => {
-  client.fetch(`*[_type=="post"]{
-    title,
-    slug,
-    publishedAt,
-    mainImage{
-        asset->{
-            _id,
-            url
-        },
-        alt
-    }
-  }`).then((data)=> setPostData(data)).catch(console.error);
-    console.log('data>>>',postData);
- 
-}, [])
+    
 
+const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+};
 
-    // Search submit
-    // const handleSearchBar = (e) => {
-    //   e.preventDefault();
-    //   handleSearchResults();
-    // };
-    // // Search for blog by category
-    // const handleSearchResults = () => {
-    //  //handle search inputs
-    // };
-    // Clear search and show all blogs
-    // const handleClearSearch = () => {
-    //   blogList().then((res) => {
-    //     setBlogs(res);
-    //   })
-    //   setSearchKey("");
-    // };
-
-    // function to get selected blog content
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    const query = `*[_type == "post" && title match "${searchTerm}*"]{
+        title,
+        slug,
+        publishedAt,
+        mainImage{
+            asset->{
+                _id,
+                url
+            },
+            alt
+        }
+    }`;
+        console.log(searchTerm);
+        try {
+            const response =  await client.fetch(query);
+            setPostData(response);
+            console.log("serch response >>>>",response);
+            // setSearchResults(response);
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+        }
+};
 
     return (
         <div>
@@ -92,16 +124,16 @@ useEffect(() => {
 
             <section className="tf-blog">
                 <div className="tf-container">
-                {/* <SearchBar
-        value={searchKey}
-        clearSearch={handleClearSearch}
-        formSubmit={handleSearchBar}
-        handleSearchKey={(e) => setSearchKey(e.target.value)}
-      /> */}
-      <div className="widget widget-search">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search NFT" required="" />
-                                        <Link to className="btn-search"><i className="icon-fl-search-filled"></i></Link>
+        <div className="widget widget-search" style={{ marginBottom: '4rem' }}>
+        <form onSubmit={handleSubmit}>
+                <input 
+                    type="text" 
+                    placeholder="Search Blog....." 
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    required="" 
+                />
+                <Link to className="btn-search"><i className="icon-fl-search-filled"></i></Link>
                                     </form>
                                 </div>
                     <div className="row">
