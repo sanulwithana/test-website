@@ -14,8 +14,8 @@ function PageTitle(props) {
                     <div className="col-md-12">
                         <h2 className="page-title-heading">{title}</h2>
                         <ul className="breadcrumbs">
-                            <li><Link to="/">HOME</Link></li>
-                            <li>{title}</li>
+                            {/* <li><Link to="/">HOME</Link></li> */}
+                            {/* <li>The heart and backbone of our club </li> */}
                         </ul> 
                     </div>
                 </div>
