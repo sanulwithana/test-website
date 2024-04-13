@@ -189,7 +189,7 @@ function BlogDetails(props) {
                                     </div>
     
                                     <ul className="post-navigator">
-                                        <li>
+                                        { singlePost.previous != null && <li>
                                             <div className="thump">
                                             {singlePost ? (
                                                   <img 
@@ -207,11 +207,11 @@ function BlogDetails(props) {
                                                 )}
                                             </div>
                                             <div className="content">
-                                                <Link to="#" className="btn-post btn-prev">PREVIOUS</Link>
-                                                <h6 className="title"><Link to="/blog-details">{singlePost.previous.title}</Link></h6>
+                                                <Link to={"/blog/" + singlePost.previous.slug} key={singlePost.previous.slug} className="btn-post btn-prev">PREVIOUS</Link>
+                                                <h6 className="title"><Link to={"/blog/" + singlePost.previous.slug} key={singlePost.previous.slug} >{singlePost.previous.title}</Link></h6>
                                             </div>
-                                        </li>
-                                        <li>
+                                        </li> }
+                                        { singlePost.next != null && (<li>
                                             <div className="thump">
                                                 {singlePost ? (
                                                   <img 
@@ -229,10 +229,10 @@ function BlogDetails(props) {
                                                 )}
                                             </div>
                                             <div className="content">
-                                                <Link to="#" className="btn-post btn-next">NEXT</Link>
-                                                <h6 className="title"><Link to="/blog-details">{singlePost.next.title}</Link></h6>
+                                                <Link to={"/blog/" + singlePost.next.slug} key={singlePost.next.slug} className="btn-post btn-next">NEXT</Link>
+                                                <h6 className="title"><Link to={"/blog/" + singlePost.next.slug} key={singlePost.next.slug}>{singlePost.next.title}</Link></h6>
                                             </div>
-                                        </li>
+                                        </li> )}
                                     </ul>
         
                                     {/* <div id="comments">
