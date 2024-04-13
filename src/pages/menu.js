@@ -7,14 +7,20 @@ const menus = [
     {
         id: 2,
         name: 'About',
-
-        links: '/about-v1',
+        links: '#',
+        namesub: [
+            {
+                id: 1,
+                sub: 'Annual Reports',
+                links: '/about-v1'
+            },
+        ],
     },
     {
         id: 3,
         name: 'Avenues',
 
-        links: '#',
+        links: '/blog',
         namesub: [
            
             {
@@ -51,16 +57,6 @@ const menus = [
                 id: 7,
                 sub: 'Digital Communication',
                 links: '/avenueDetail/digital-communication'
-            },
-            {
-                id: 8,
-                sub: 'About v1',
-                links: '/about-v1'
-            },
-            {
-                id: 9,
-                sub: 'About v2',
-                links: '/about-v2'
             },
         ]
     },
@@ -115,11 +111,6 @@ const menus = [
                 links: '/page-404'
             },
         ],
-    },
-    {
-        id: 4,
-        name: 'Blog',
-        links: '/blog',
     },
 
     {

@@ -32,7 +32,7 @@ function Home01(props) {
             <Collection03 data={dataCollection} />
            
             {/* <Work data={dataWork} /> */}
-            <Faqs data={dataFaqs} />
+            {/* <Faqs data={dataFaqs} /> */}
             {/* <Partner data={dataPartner} /> */}
            <Footer2 />
         </div>
