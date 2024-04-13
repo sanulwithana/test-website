@@ -279,7 +279,7 @@ function BlogDetails(props) {
                                                         />
                                                         </div>
                                                         <div className="post-content">
-                                                            <h6 className="title"><Link to="/blog-details">{post.title}</Link></h6>
+                                                            <h6 className="title"><Link to={"/blog/" + post.slug.current} key={post.slug.current}>{post.title}</Link></h6>
                                                             <div className="post-meta">
                                                                
                                                                 <span className="date">{post.publishedAt}</span>
