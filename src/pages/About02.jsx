@@ -4,7 +4,7 @@ import About2 from '../components/about/About2';
 import Team from '../components/team/Team';
 import Partner from '../components/partner/Partner';
 
-import Footer2 from '../components/footer';
+import Footer2 from '../components/footer/Footer2';
 
 import dataAbout from '../assets/fake-data/data-about';
 import dataTeam from '../assets/fake-data/data-team';

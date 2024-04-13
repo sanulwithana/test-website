@@ -1,18 +1,14 @@
 import React,{useState,useEffect,useRef} from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
-import Footer2 from '../components/footer';
+import Footer2 from '../components/footer/Footer2';
 import client from '../services/client'
-import data from '../assets/fake-data/data-blog'
 import { Link } from 'react-router-dom';
-import Button from '../components/button/Button';
 import Button02 from '../components/button/Button02';
 
 
 function Blog(props) {
     const [postData, setPostData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(15);
 
     const lastPublishedAtRef = useRef(null);
     const lastIdRef = useRef(null);
@@ -150,7 +146,7 @@ const handleSubmit = async (event) => {
     return (
         <div>
 
-            <PageTitle title='Explore' />
+            <PageTitle title='EXPLORE' />
 
 
             <section className="tf-blog">

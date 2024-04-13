@@ -2,7 +2,7 @@ import React from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
 import About1 from '../components/about/About1';
 import Partner from '../components/partner/Partner';
-import Footer2 from '../components/footer';
+import Footer2 from '../components/footer/Footer2';
 import dataAbout from '../assets/fake-data/data-about';
 import dataPartner from '../assets/fake-data/data-partner';
 import Team2 from '../components/team/Team2';

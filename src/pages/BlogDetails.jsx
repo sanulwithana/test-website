@@ -1,7 +1,7 @@
 
 import React , {useState,useEffect} from 'react';
 
-import Footer from '../components/footer';
+import Footer2 from '../components/footer/Footer2';
 import PageTitle from '../components/pagetitle/PageTitle';
 
 import img5 from '../assets/images/blog/next-post.jpg'
@@ -311,7 +311,7 @@ function BlogDetails(props) {
                     </div>
                 </section>
     
-                <Footer />
+                <Footer2 />
                 
             </div>
         );

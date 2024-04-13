@@ -24,12 +24,13 @@ function Footer2(props) {
           setIsVisible(false);
         }
       };
-  
+     
       window.addEventListener("scroll", toggleVisibility);
   
       return () => window.removeEventListener("scroll", toggleVisibility);
     }, []);
 
+    const currentYear = new Date().getFullYear();
     return (
         <footer className="footer style-2">
                 <div className="footer-inner">
@@ -37,15 +38,15 @@ function Footer2(props) {
                         <div className="row">
                             <div className="col-md-12">
                                 <h2 className="title">JOIN OUR COMMUNITY</h2>
-                                <p className="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                                <p className="content">Engage with us to help the community while having fun! </p>
                                 <div className="group-btn">
-                                    <Link to="#" className="tf-button discord" data-toggle="modal" data-target="#popup_bid"><i className="icon-fl-vt"></i><span>DISCORD</span></Link>
-                                    <Link to="/collection" className="tf-button">WHITELIST NOW</Link>
+                                    {/* <Link to="#" className="tf-button discord" data-toggle="modal" data-target="#popup_bid"><i className="icon-fl-vt"></i><span>DISCORD</span></Link> */}
+                                    <Link to="/collection" className="tf-button">BECOME A RACIIT MEMBER</Link>
                                 </div>
-                                <form action="#" id="subscribe-form">
+                                {/* <form action="#" id="subscribe-form">
                                     <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />
-                                    <button className="tf-button" type="submit" id="subscribe-button">SUBSCRIBE</button>
-                                </form>
+                                    <button className="tf-button" type="submit" id="subscribe-button">JOIN</button>
+                                </form> */}
 
                                 <ul className="social-item">
                                     <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
@@ -68,7 +69,7 @@ function Footer2(props) {
                                 
                                    <div className="content-left">
                                         <img src={logo} alt="Binabox" />
-                                        <p className="copy-right">BINABOX 2022 - ALL rights reserved</p>
+                                        <p className="copy-right">Rotaract Club Of IIT {currentYear} - ALL rights reserved</p>
                                    </div>
 
                                     <ul className="menu-bottom">
