@@ -12,7 +12,7 @@ function Contact(props) {
     return (
         <div>
 
-            <PageTitle title='Contact Us' />
+          
 
             <section className="tf-contact ">
                 <div className="tf-container">

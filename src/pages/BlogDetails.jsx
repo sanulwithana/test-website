@@ -69,8 +69,7 @@ export const getCatogaries = async () => {
 }
 
 export const getLatestPost = async () => {
-   
-    const query = `*[_type == "post"]{
+   const query = `*[_type == "post"]{
         title,
         slug,
         publishedAt,
