@@ -4,6 +4,10 @@ import PageTitle from '../components/pagetitle/PageTitle';
 import client from '../services/client'
 import { useParams } from 'react-router-dom';
 import Loading from '../components/loader/loader';
+import { Document, Page, pdfjs } from 'react-pdf'
+pdfjs.GlobalWorkerOptions.workerSrc `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+
+
 
 export const getPdf = async (slug) => {
     const query = `*[_type == 'annualReport'  && slug.current == "${slug}"] {
@@ -27,6 +31,14 @@ export const getPdf = async (slug) => {
 function PdfView(props) {
     const { slug } = useParams();
     const [pdfReport, setpdfReport] = useState(null)
+    const [numPages, setNumPages] = useState();
+    const [pageNumber, setPageNumber] = useState(1);
+    const [loading, setLoading] = useState(true);
+
+    function onDocumentLoadSuccess(numPages){
+        setLoading(false);
+        setNumPages(numPages);
+      }
 
     useEffect(() => {  
         async function fetchData() { 
@@ -39,7 +51,7 @@ function PdfView(props) {
     
     }, [])
 
-    if(pdfReport === null){
+    if(pdfReport === null || loading){
         <Loading/>
     }
     
@@ -47,8 +59,13 @@ function PdfView(props) {
         <div className='home-2'>
            <PageTitle title={pdfReport.title} />
            <div>
-            
-           </div>
+      <Document file={pdfReport.reportFile} onLoadSuccess={onDocumentLoadSuccess}>
+        <Page pageNumber={pageNumber} />
+      </Document>
+      <p>
+        Page {pageNumber} of {numPages}
+      </p>
+    </div>
             <Footer2 />
             
         </div>
