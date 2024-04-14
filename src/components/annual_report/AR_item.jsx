@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
-import img2 from '../../assets/images/slider/slider-2.jpg'
 const ARItem = (props) => {
-    const {title , slug , reportFile , image} = props;
-
+    const {title , slug , image} = props;
 
   return (
-    <div className="custom-blog-item-container"><Link to={`#`}>
+    <div className="custom-blog-item-container"><Link
+    to={"/pdf-view/" + slug} key={slug}
+    >
     <article className="custom-blog-article" style={{ backgroundImage: `url(${image})` }}>
     <div className="image-overlay"></div>
       <div className="custom-content">

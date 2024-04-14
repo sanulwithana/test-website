@@ -20,6 +20,7 @@ import Home01 from "./Home01";
 import ItemDetails from "./ItemDetails";
 
 import OurTeam from "./OurTeam";
+import PdfView from "./PdfView";
 
 import SignUp from "./SignUp";
 import Testimonials from "./Testimonials";
@@ -40,6 +41,7 @@ const routes = [
   // { path: '/roadmap-v3', component: <RoadMap03 />},
 
   // { path: '/signin', component: <Login />},
+  { path: '/pdf-view/:slug', component: <PdfView />},
   { path: '/annualreport', component: <AnnualReport />},
   { path: '/avenueDetail/:slug', component: <AvenueDetails />},
   { path: '/signup', component: <SignUp />},
