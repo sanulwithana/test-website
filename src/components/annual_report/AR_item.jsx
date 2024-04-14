@@ -9,10 +9,10 @@ const ARItem = (props) => {
   return (
     <div className="custom-blog-item-container">
     <article className="custom-blog-article" style={{ backgroundImage: `url(${image})` }}>
-    <div className="imagez-overlay"></div>
+    <div className="image-overlay"></div>
       <div className="custom-content">
         <div className="custom-text-content">
-          <h3 className= "custom-title"><Link to={`#`}>{title}</Link></h3>
+          <h3 className= "title"><Link to={`#`}>{title}</Link></h3>
         </div>
       </div>
     </article>
