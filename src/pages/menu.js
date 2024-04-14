@@ -12,7 +12,7 @@ const menus = [
             {
                 id: 1,
                 sub: 'Annual Reports',
-                links: '/about-v1'
+                links: '/annualreport'
             },
         ],
     },

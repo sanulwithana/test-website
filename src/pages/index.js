@@ -1,6 +1,7 @@
 
 import Page404 from "./404";
 import About01 from "./About01";
+import AnnualReport from "./AnnualReport";
 import AvenueDetails from "./AvenueDetails";
 import Blog from "./Blog";
 
@@ -39,6 +40,7 @@ const routes = [
   // { path: '/roadmap-v3', component: <RoadMap03 />},
 
   // { path: '/signin', component: <Login />},
+  { path: '/annualreport', component: <AnnualReport />},
   { path: '/avenueDetail/:slug', component: <AvenueDetails />},
   { path: '/signup', component: <SignUp />},
   { path: '/faq-v1', component: <Faq01 />},
