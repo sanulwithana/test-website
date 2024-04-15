@@ -8,6 +8,8 @@ import Banner01 from '../components/banner/Banner01';
 
 import Footer2 from '../components/footer/Footer2';
 import Collection03 from '../components/collection/Collection03';
+import Banner02 from '../components/banner/Banner02';
+import Banner03 from '../components/banner/Banner03';
 
 
 
@@ -15,7 +17,8 @@ function Home01(props) {
 
     return (
         <div className="home-1">
-            <Banner01 data={dataBanner} />
+          <Banner03 data={dataBanner} />
+            {/* <Banner01 data={dataBanner} /> */}
             {/* <Logo /> */}
             <About1 data={dataAbout} />
             <div className="tf-heading wow fadeInUp">
