@@ -1,13 +1,8 @@
 import React from 'react';
 
-import SwiperCore, { Autoplay, Navigation, Scrollbar, A11y } from 'swiper';
+import { Autoplay, Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Button from '../button/Button';
-import Button02 from '../button/Button02';
-import img1 from '../../assets/images/hello.jpg'
-import img2 from '../../assets/images/help.jpg'
-import img3 from '../../assets/images/help.jpg'
-
+import './styles.scss';
 
 function Banner03(props) {
     const {data} = props;
