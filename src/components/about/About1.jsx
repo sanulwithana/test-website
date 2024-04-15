@@ -9,7 +9,7 @@ About1.propTypes = {
 
 function About1(props) {
 
-    const {data} = props;
+    const {data , stats} = props;
 
     const [dataBlock] = useState(
         {
@@ -81,11 +81,11 @@ function About1(props) {
 
                             <div className="counter-wrap wow fadeInUp" data-wow-delay="0.2s">
                                 {
-                                    dataCounter.map(idx => (
-                                        <div key={idx.id} className="tf-counter ">
-                                            <h6>{idx.title}</h6>
+                                    stats.map(idx => (
+                                        <div key={idx.heading} className="tf-counter ">
+                                            <h6>{idx.heading}</h6>
                                             <div className="content">
-                                                <span className="counter-number" data-to="1000" data-speed="2000" >{idx.number}</span>+
+                                                <span className="counter-number" data-to="1000" data-speed="2000" >{idx.count}</span>+
                                             </div>
                                         </div>  
                                     ))
@@ -95,16 +95,16 @@ function About1(props) {
 
                         </div>
                         {
-                            data.map(idx => (
-                                <div key={idx.id} className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12" style={{marginBottom: '2rem'}}>
+                            data.map((idx,index) => (
+                                <div key={index} className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12" style={{marginBottom: '2rem'}}>
                                 <div className="tf-step wow fadeInUp" data-wow-delay="0.2s" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                     <div className="step-title" style={{ marginTop: '20px' }}>
                                         <div className="sub-number" style={{ color: idx.color }}>
-                                            0{idx.id}
+                                            0{index + 1}
                                         </div>
                                         <h3 style={{ lineHeight: '1.2', flex: '1' }}>{idx.title}</h3>
                                     </div>
-                                    <p style={{ fontSize: '1.5rem', lineHeight: '1.4' }}>{idx.text}</p>
+                                    <p style={{ fontSize: '1.5rem', lineHeight: '1.4' }}>{idx.description}</p>
                                 </div>
                             </div>
                             

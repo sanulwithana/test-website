@@ -29,15 +29,15 @@ function Banner03(props) {
                             loop={true}
                         >
                             {data.map((idx, index) => (
-                                <SwiperSlide key={idx.id}>
+                                <SwiperSlide key={idx.title}>
                                     <div className="banner-item">
                                         <div className="banner-content">
                                             <h1 className="heading">{idx.title}</h1>
-                                            <p className="sub-heading">{idx.desc}</p>
+                                            <p className="sub-heading">{idx.subtext}</p>
                                         </div>
                                         <div className="image-container">
                                             <img
-                                                src={index === 0 ? img1 : index === 1 ? img2 : img3}
+                                                src={idx.image}
                                                 alt={`Slider ${index + 1}`}
                                                 className="banner-image"
                                             />
