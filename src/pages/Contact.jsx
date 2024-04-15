@@ -52,7 +52,7 @@ function Contact(props) {
                         <div className="tf-heading">
                               
                             </div>
-                            <form action="contact/contact-process.php" method="post" id="commentform"  className="comment-form">
+                            <form action="https://submit-form.com/81HsrhAWU" method="post" id="commentform"  className="comment-form">
                                 <div className="form-inner">
                                     <fieldset className="name">
                                         <input type="text" id="name" placeholder="Name" className="tb-my-input" name="name" tabIndex="2" aria-required="true" required="" />

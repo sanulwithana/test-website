@@ -1,13 +1,15 @@
 import React,{useEffect,useState} from 'react';
 import Footer2 from '../components/footer/Footer2';
-import PageTitle from '../components/pagetitle/PageTitle';
 import client from '../services/client'
 import { useParams } from 'react-router-dom';
 import Loading from '../components/loader/loader';
 import { Document, Page, pdfjs } from 'react-pdf'
-pdfjs.GlobalWorkerOptions.workerSrc `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//   'pdfjs-dist/build/pdf.worker.min.js',
+//   import.meta.url,
+// ).toString();
 
-
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export const getPdf = async (slug) => {
     const query = `*[_type == 'annualReport'  && slug.current == "${slug}"] {
@@ -33,7 +35,7 @@ function PdfView(props) {
     const [pdfReport, setpdfReport] = useState(null)
     const [numPages, setNumPages] = useState();
     const [pageNumber, setPageNumber] = useState(1);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     function onDocumentLoadSuccess(numPages){
         setLoading(false);
@@ -43,7 +45,7 @@ function PdfView(props) {
     useEffect(() => {  
         async function fetchData() { 
             getPdf(slug).then((data)=>{setpdfReport(data)})  
-            console.log(pdfReport);
+            // console.log(pdfReport.reportFile);
         };
             fetchData();
    
@@ -52,19 +54,19 @@ function PdfView(props) {
     }, [])
 
     if(pdfReport === null || loading){
-        <Loading/>
+      return( <Loading/>); 
     }
     
     return (
         <div className='home-2'>
-           <PageTitle title={pdfReport.title} />
-           <div>
-      <Document file={pdfReport.reportFile} onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
+           {/* <PageTitle title={pdfReport.title} /> */}
+           <div className='container'>
+      <Document file={pdfReport.reportFile} onLoadSuccess={onDocumentLoadSuccess} style={{width: '100vw', height: 'auto'}}>
+        <Page pageIndex={0} />
       </Document>
-      <p>
+      {/* <p>
         Page {pageNumber} of {numPages}
-      </p>
+      </p> */}
     </div>
             <Footer2 />
             
