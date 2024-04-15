@@ -49,12 +49,12 @@ function Footer2(props) {
                                 </form> */}
 
                                 <ul className="social-item">
-                                    <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
-                                    <li><Link to="#"><i className="fab fa-facebook"></i></Link></li>
-                                    <li><Link to="#"><i className="fab fa-telegram-plane"></i></Link></li>
-                                    <li><Link to="#"><i className="fab fa-youtube"></i></Link></li>
-                                    <li><Link to="#"><i className="icon-fl-tik-tok-2"></i></Link></li>
-                                    <li><Link to="#"><i className="icon-fl-vt"></i></Link></li>
+                                  
+                                    <li><Link to="https://www.facebook.com/iitrotaract"  target="_blank" rel="noopener noreferrer" ><i className="fab fa-facebook"></i></Link></li>
+                                    <li><Link to="https://www.instagram.com/rotaract_iit"  target="_blank" rel="noopener noreferrer" ><i className="fab fa-instagram"></i></Link></li>
+                                    <li><Link to="https://www.youtube.com/@iitrotaract" target="_blank" rel="noopener noreferrer" ><i className="fab fa-youtube"></i></Link></li>
+                                    <li><Link to="https://www.linkedin.com/company/rotaract-club-of-iit" target="_blank" rel="noopener noreferrer" ><i className="fab fa-linkedin"></i></Link></li>
+                                    <li><Link to="https://www.tiktok.com/@rotaract_iit" target="_blank" rel="noopener noreferrer" ><i className="icon-fl-tik-tok"></i></Link></li>
                                 </ul>
                             </div>
                         </div>
