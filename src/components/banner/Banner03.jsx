@@ -27,7 +27,7 @@ function Banner03(props) {
                                 <SwiperSlide key={idx.title}>
                                     <div className="banner-item">
                                         <div className="banner-content">
-                                            <h1 className="heading">{idx.title}</h1>
+                                            <h1 className="heading">{idx.title.toUpperCase()}</h1>
                                             <p className="sub-heading">{idx.subtext}</p>
                                         </div>
                                         <div className="image-container">

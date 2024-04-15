@@ -40,7 +40,6 @@ export const fetchHomeSettings = async () => {
   };
 
 function Home01(props) {
-    const [loading, setloading] = useState(true);
     const [imageSlider, setimageSlider] = useState(null)
     const [stats, setstats] = useState(null);
     const [catogaries, setcatogaries] = useState(null);

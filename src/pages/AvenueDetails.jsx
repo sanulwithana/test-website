@@ -88,6 +88,7 @@ function AvenueDetails() {
           .fetch(`*[_type == "category" && slug.current == "${slug}"] {
             title,
             description,
+            "color": color.hex
           }`)
           .then((data) => {
             console.log('catogary >>>>>>',data);
@@ -198,7 +199,7 @@ function AvenueDetails() {
         return (
             <div>
     
-                <PageTitle title={category[0].title} />
+                <PageTitle title={category[0].title} color={category[0].color} />
     
     
                 <section className="tf-blog">
