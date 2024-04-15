@@ -20,9 +20,9 @@ function Banner03(props) {
                         <Swiper
                             modules={[Navigation, Scrollbar, A11y, Autoplay]}
                             spaceBetween={0}
-                            effect=''
+                            effect='fade'
                             autoplay={{
-                                delay: 3000,
+                                delay: 5500,
                                 disableOnInteraction: false
                             }}
                             className="slider-home"

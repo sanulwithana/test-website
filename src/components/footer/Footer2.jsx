@@ -41,7 +41,7 @@ function Footer2(props) {
                                 <p className="content">Engage with us to help the community while having fun! </p>
                                 <div className="group-btn">
                                     {/* <Link to="#" className="tf-button discord" data-toggle="modal" data-target="#popup_bid"><i className="icon-fl-vt"></i><span>DISCORD</span></Link> */}
-                                    <Link to="/collection" className="tf-button">BECOME A RACIIT MEMBER</Link>
+                                    <Link to="/contact" className="tf-button">BECOME A RACIIT MEMBER</Link>
                                 </div>
                                 {/* <form action="#" id="subscribe-form">
                                     <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />

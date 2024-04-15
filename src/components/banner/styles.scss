@@ -331,16 +331,29 @@
                 color: white;
                 .heading {
                     font-size: 5rem;
+                    line-height: 4.3rem;
                     margin-bottom: 1rem;
                 }
                 .sub-heading {
                     margin-bottom: 2rem;
                 }
+                @media (max-width: 768px) {
+                    .heading {
+                        font-size: 3rem;
+                        line-height: 2.3rem;
+                    }
+
+                    .sub-heading {
+                        font-size: 1rem;
+                        line-height: 1.3rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
             }
             .image-container {
                 position: relative;
                 width: 100%;
-                height: 400px;
+                height: 50rem;
                 overflow: hidden;
                 .banner-image {
                     width: 100%;
