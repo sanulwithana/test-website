@@ -8,12 +8,12 @@ function Icon({ color, gap }) {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{backgroundColor:"grey",width:'25rem'}}>
     <p style={{color: "yellow",position:'relative',top:'7rem',right:'-2.5rem',maxWidth:"170px" ,fontSize:'1.5rem',textAlign:'center',lineHeight:'1.5rem'}}>the great absent of doomm dasdad sdasds</p>
     <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='196'
-    height='170.667'
+    width='206'
+    height='190.667'
     version='1'
     viewBox='0 0 1197 1280'
   >
