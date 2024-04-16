@@ -14,6 +14,11 @@ const menus = [
                 sub: 'Annual Reports',
                 links: '/annualreport'
             },
+            {
+                id: 2,
+                sub: 'Awards',
+                links: '/awards'
+            },
         ],
     },
     {

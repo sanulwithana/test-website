@@ -3,6 +3,7 @@ import Page404 from "./404";
 import About01 from "./About01";
 import AnnualReport from "./AnnualReport";
 import AvenueDetails from "./AvenueDetails";
+import Awards from "./Awards";
 import Blog from "./Blog";
 
 import BlogDetails from "./BlogDetails";
@@ -41,6 +42,7 @@ const routes = [
   // { path: '/roadmap-v3', component: <RoadMap03 />},
 
   // { path: '/signin', component: <Login />},
+  { path: '/awards', component: <Awards />},
   { path: '/pdf-view/:slug', component: <PdfView />},
   { path: '/annualreport', component: <AnnualReport />},
   { path: '/avenueDetail/:slug', component: <AvenueDetails />},

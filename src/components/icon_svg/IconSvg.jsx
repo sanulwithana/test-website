@@ -3,17 +3,16 @@ import React from "react";
 function Icon({ color, gap }) {
   const iconStyle = {
     fill: color || "#FFD700", // Default to gold color if not specified
-    width: `calc(1596px + ${gap}px)`, // Dynamic width with added gap
-    height: '1706.667px',
+    width: `290px`, // Dynamic width with added gap
+    height: '246.667px',
   };
 
   return (
-    <div className="container" style={{backgroundColor:"grey",width:'25rem'}}>
-    <p style={{color: "yellow",position:'relative',top:'7rem',right:'-2.5rem',maxWidth:"170px" ,fontSize:'1.5rem',textAlign:'center',lineHeight:'1.5rem'}}>the great absent of doomm dasdad sdasds</p>
+    <div className="container" style={{backgroundColor:"grey",width:'290px'}}>
+    <p className="heading" style={{color: "yellow",position:'relative',top:'10.5rem',right:'-5.9rem',maxWidth:"170px" ,fontSize:'1.5rem',fontWeight:'500',textAlign:'center',lineHeight:'1.5rem'}}>the great absent of doomm dasdad sdasds</p>
     <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='206'
-    height='190.667'
+    style={iconStyle}
     version='1'
     viewBox='0 0 1197 1280'
   >
