@@ -35,7 +35,7 @@ function AnnualReport(props) {
     }
     return (
         <div className='page-about home-1'>
-            <PageTitle title='Annual Report' />
+            <PageTitle title='Annual Report' color={"#800080"} />
             {annualRep.map((item,idx) => (  
                 <ARItem
                 title= {item.title}
