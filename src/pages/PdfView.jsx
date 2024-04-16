@@ -1,39 +1,38 @@
-import React,{useState} from 'react';
+import React,{memo, useState} from 'react';
 import Footer2 from '../components/footer/Footer2';
 import client from '../services/client'
 import { useParams } from 'react-router-dom';
-import { Document, Page, pdfjs } from 'react-pdf'
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css'; // Import styles for react-pdf
 
 import './PDFviEW/styles.scss'; 
 import Icon from '../components/icon_svg/IconSvg';
-// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-//     'pdfjs-dist/build/pdf.worker.min.js',
-//     import.meta.url,
-//   ).toString();
-  
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-  
+import { Viewer, Worker,SpecialZoomLevel } from '@react-pdf-viewer/core';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  
+// // const scrollModePluginInstance = scrollModePlugin();
+// const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-export const getPdf = async (slug) => {
-    const query = `*[_type == 'annualReport'  && slug.current == "${slug}"] {
-        title,
-        publishedAt,
-        "reportFile": upload.file.asset->url,
-        showReport,
-        mainImage{
-            asset->{
-                    _id,
-                    url
-                },
-                alt
-                  }
-      }`
-     const pdfReport = await client.fetch(query);
-     console.log('latest report >>>',pdfReport);
-     return pdfReport[0];
- }
+// export const getPdf = async (slug) => {
+//     const query = `*[_type == 'annualReport'  && slug.current == "${slug}"] {
+//         title,
+//         publishedAt,
+//         "reportFile": upload.file.asset->url,
+//         showReport,
+//         mainImage{
+//             asset->{
+//                     _id,
+//                     url
+//                 },
+//                 alt
+//                   }
+//       }`
+//      const pdfReport = await client.fetch(query);
+//      console.log('latest report >>>',pdfReport);
+//      return pdfReport[0];
+//  }
 
  function PdfView(props) {
      const { slug } = useParams();
@@ -41,6 +40,21 @@ export const getPdf = async (slug) => {
      const [numPages, setNumPages] = useState(0);
      const [pageNumber, setPageNumber] = useState(1);
      const [loading, setLoading] = useState(true);
+
+     const defaultLayoutPluginInstance = defaultLayoutPlugin({
+        toolbarPlugin: {
+            fullScreenPlugin: {
+                // Zoom to fit the screen after entering and exiting the full screen mode
+                onEnterFullScreen: (zoom) => {
+                    zoom(SpecialZoomLevel.PageFit);
+                },
+                onExitFullScreen: (zoom) => {
+                    zoom(SpecialZoomLevel.PageFit);
+                },
+            },
+        },
+    });
+    
  
     //  useEffect(() => {
     //      async function fetchData() {
@@ -54,14 +68,6 @@ export const getPdf = async (slug) => {
     //      fetchData();
     //  }, [slug]);
  
-     function onDocumentLoadSuccess({ numPages }) {
-         setLoading(false);
-         setNumPages(numPages);
-     }
- 
-     const handlePageChange = (newPage) => {
-         setPageNumber(newPage);
-     };
  
     //  if (pdfReport === null) {
     //      return <Loading />;
@@ -69,30 +75,30 @@ export const getPdf = async (slug) => {
  
      return (
       <div className='home-2'>
-          <Icon color="#FFD700" gap={20} />
-      <div className='tf-container'>
-          {/* <p className='title'>
-              Page {pageNumber} of {numPages}
-          </p> */}
-        
-          {/* <div className='pdf-container'>
-          
-              <Document file={'https://cdn.sanity.io/files/eeksv8lg/production/12ff9186e0ceb7c50ebb9418fb310137832359c5.pdf'} onLoadSuccess={onDocumentLoadSuccess}>
-                  {Array.apply(null, Array(numPages))
-                      .map((x, i) => i + 1)
-                      .map((page) => {
-                          return (
-                              <Page
-                                  key={page}
-                                  pageNumber={page}
-                                  renderTextLayer={false}
-                                  renderAnnotationLayer={false}
-                                  width={600} // Optional: Set the width of the page
-                              />
-                          );
-                      })}
-              </Document>
-          </div> */}
+
+      <div className='tf-container' style={{   backgroundColor: 'rgba(29, 35, 40, 0.2)'}}>
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+        <div style={{
+         
+        // border: '1px solid rgba(0, 0, 0, 0.3)',
+        // width: '50%',
+        '@media (max-width: 768px)': {  // Adjust styles for mobile screens
+            height: '90vh',
+        },
+        '@media (min-width: 769px)': {  // Adjust styles for desktop screens
+            height: '60vh',
+        },
+        overflow: 'auto',
+    }}>
+            <Viewer
+                defaultScale={1}  
+                fileUrl={`https://cdn.sanity.io/files/eeksv8lg/production/12ff9186e0ceb7c50ebb9418fb310137832359c5.pdf`}
+                plugins={[
+                    defaultLayoutPluginInstance,
+                ]}
+            />
+        </div>
+    </Worker>
       </div>
       <Footer2 />
   </div>
@@ -100,5 +106,6 @@ export const getPdf = async (slug) => {
      );
  }
  
- export default PdfView;
+ export default memo(PdfView);
  
+//      <Document file={'https://cdn.sanity.io/files/eeksv8lg/production/12ff9186e0ceb7c50ebb9418fb310137832359c5.pdf'}
