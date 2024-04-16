@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 
 import data from '../assets/fake-data/data-collection'
+import Icon from '../components/icon_svg/IconSvg';
 
 
 function Awards(props) {
@@ -42,7 +43,10 @@ export function AwardItem() {
                     {data.map(idx => (
                         <div key={idx.id} className="col-lg-3 col-md-1">
                             <div className="tf-product">
-                                <div className="image" style={{ marginBottom: '4rem' }}>
+                            <p  style={{color: "grey",position:'absolute',top:'6.5rem',maxWidth:"170px",left:"3.5rem", zIndex: 200 ,fontSize:'1.5rem',fontWeight:'500',textAlign:'center',lineHeight:'1.5rem'}}>the great absent of doomm dasdad sdasds</p>
+                                <div className="image" style={{ marginBottom: '0.5rem' }}>
+                                   
+                                    {/* <Icon color="#FFD700" gap={20} /> */}
                                     <img src={idx.img} alt="Binabox" />
                                 </div>
 
