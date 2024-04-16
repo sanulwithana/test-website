@@ -1,12 +1,12 @@
-import React,{useEffect,useState} from 'react';
+import React,{useState} from 'react';
 import Footer2 from '../components/footer/Footer2';
 import client from '../services/client'
 import { useParams } from 'react-router-dom';
-import Loading from '../components/loader/loader';
 import { Document, Page, pdfjs } from 'react-pdf'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css'; // Import styles for react-pdf
 
 import './PDFviEW/styles.scss'; 
+import Icon from '../components/icon_svg/IconSvg';
 // pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 //     'pdfjs-dist/build/pdf.worker.min.js',
 //     import.meta.url,
@@ -69,11 +69,14 @@ export const getPdf = async (slug) => {
  
      return (
       <div className='home-2'>
+          <Icon color="#FFD700" gap={20} />
       <div className='tf-container'>
-          <p className='title'>
+          {/* <p className='title'>
               Page {pageNumber} of {numPages}
-          </p>
-          <div className='pdf-container'>
+          </p> */}
+        
+          {/* <div className='pdf-container'>
+          
               <Document file={'https://cdn.sanity.io/files/eeksv8lg/production/12ff9186e0ceb7c50ebb9418fb310137832359c5.pdf'} onLoadSuccess={onDocumentLoadSuccess}>
                   {Array.apply(null, Array(numPages))
                       .map((x, i) => i + 1)
@@ -89,7 +92,7 @@ export const getPdf = async (slug) => {
                           );
                       })}
               </Document>
-          </div>
+          </div> */}
       </div>
       <Footer2 />
   </div>
