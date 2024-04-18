@@ -8,6 +8,7 @@ import Footer from '../components/footer';
 
 import data from '../assets/fake-data/data-collection'
 import Icon from '../components/icon_svg/IconSvg';
+import Footer2 from '../components/footer/Footer2';
 
 
 function Awards(props) {
@@ -21,7 +22,7 @@ function Awards(props) {
                 {AwardItem()}
             </section>
                 
-            <Footer />
+            <Footer2 />
             
         </div>
     );
@@ -40,19 +41,29 @@ export function AwardItem() {
             </div>
             <div className="col-lg-9 col-md-8 ">
                 <div className="row">
-                    {data.map(idx => (
-                        <div key={idx.id} className="col-lg-3 col-md-1">
-                            <div className="tf-product">
-                            <p  style={{color: "grey",position:'absolute',top:'6.5rem',maxWidth:"170px",left:"3.5rem", zIndex: 200 ,fontSize:'1.5rem',fontWeight:'500',textAlign:'center',lineHeight:'1.5rem'}}>the great absent of doomm dasdad sdasds</p>
+                <div className="row">
+                                {
+                                    data.slice(0,9).map(idx => (
+                                        <div key={idx.id} className="col-lg-3 col-md-6 col-sm-6 col-12 ">
+                                            <div className="tf-product">
+                                        
+                                                <div className="image">
+                                                <p  style={{color: "grey",position:'absolute',top:'7.6rem',maxWidth:"170px",left:"3.7rem", zIndex: 200 ,fontSize:'1.3rem',fontWeight:'500',textAlign:'center',lineHeight:'1.5rem'}}>the medal of goasddsa dasdsadassda assdsad dsadsasda ddd ddddd</p>
                                 <div className="image" style={{ marginBottom: '0.5rem' }}>
                                    
-                                    {/* <Icon color="#FFD700" gap={20} /> */}
-                                    <img src={idx.img} alt="Binabox" />
+                                    <Icon color="#FFD700" />
+                                    {/* <img src={idx.img} alt="Binabox" /> */}
                                 </div>
+                                                   
+                                                </div>
+                                                <h6 className="name"><Link to="/item-details"> </Link></h6>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+
 
                             </div>
-                        </div>
-                    ))}
 
 
                 </div>

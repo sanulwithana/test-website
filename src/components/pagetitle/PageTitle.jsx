@@ -34,7 +34,7 @@ function PageTitle(props) {
         <div className="row">
             <div className="col-md-12">
                 <h2 className="page-title-heading" style={{ alignSelf: 'center' }}>{title.toUpperCase()}</h2>
-                { description && <p className="sub-heading">{description}</p>}
+                {/* { description && <p className="sub-heading">{description}</p>} */}
             </div>
         </div>
     </div>                    
