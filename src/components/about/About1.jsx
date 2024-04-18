@@ -9,12 +9,12 @@ About1.propTypes = {
 
 function About1(props) {
 
-    const {data} = props;
+    const {data , stats} = props;
 
     const [dataBlock] = useState(
         {
             heading: 'WHO WE ARE & WHAT WE DO',
-            desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae cat cupidatat non proident, sunt in culpa qui officia dese runt mollit anim id est laborum velit esse cillum dolore eu fugiat nulla pariatu epteur sint occaecat'
+            desc: 'We are part of an international organization of young professionals and students ages 18 to 30 that are committed to service and leadership in their communities and abroad. Established in 2010 under the Rotary Club of PanColombo, Rotaract Club of IIT is a club united with global network of young people who are changing the world with clubs in over 160 countries that have committed their leadership skills to community service.'
 
         }
     )
@@ -81,11 +81,11 @@ function About1(props) {
 
                             <div className="counter-wrap wow fadeInUp" data-wow-delay="0.2s">
                                 {
-                                    dataCounter.map(idx => (
-                                        <div key={idx.id} className="tf-counter ">
-                                            <h6>{idx.title}</h6>
+                                    stats.map(idx => (
+                                        <div key={idx.heading} className="tf-counter ">
+                                            <h6>{idx.heading}</h6>
                                             <div className="content">
-                                                <span className="counter-number" data-to="1000" data-speed="2000" >{idx.number}</span>+
+                                                <span className="counter-number" data-to="1000" data-speed="2000" >{idx.count}</span>+
                                             </div>
                                         </div>  
                                     ))
@@ -95,18 +95,20 @@ function About1(props) {
 
                         </div>
                         {
-                            data.map(idx => (
-                                <div key={idx.id} className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div className="tf-step wow fadeInUp" data-wow-delay="0.2s">
-                                        <div className="step-title">
-                                            <div className="sub-number">
-                                                0{idx.id}
-                                            </div>
-                                            <h3>{idx.title}</h3>
+                            data.map((idx,index) => (
+                                <div key={index} className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12" style={{marginBottom: '2rem'}}>
+                                <div className="tf-step wow fadeInUp" data-wow-delay="0.2s" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                    <div className="step-title" style={{ marginTop: '20px' }}>
+                                        <div className="sub-number" style={{ color: idx.color }}>
+                                            0{index + 1}
                                         </div>
-                                        <p>{idx.text}</p>
+                                        <h3 style={{ lineHeight: '1.2', flex: '1' }}>{idx.title}</h3>
                                     </div>
+                                    <p style={{ fontSize: '1.5rem', lineHeight: '1.4' }}>{idx.description}</p>
                                 </div>
+                            </div>
+                            
+                            
                             ) )
                         }
                         

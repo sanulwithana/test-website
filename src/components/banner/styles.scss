@@ -2,7 +2,7 @@
 
 
 .tf-slider {
-    background: url('../../assets/images/slider/bg-slider.png') center center no-repeat;
+    // background: url('../../assets/images/slider/bg-slider.png') center center no-repeat;
     background-size: cover;
     position: relative;
 
@@ -20,11 +20,11 @@
         z-index: -1;
     }
     &.home2 {
-        background: url('../../assets/images/slider/bg-slider-2.jpg') center center no-repeat;
+        // background: url('../../assets/images/slider/bg-slider-2.jpg') center center no-repeat;
         background-size: cover;
     }
     &.home3 {
-        background: url('../../assets/images/slider/bg-slider-3.jpg') center center no-repeat;
+        // background: url('../../assets/images/slider/bg-slider-3.jpg') center center no-repeat;
         background-size: cover;
     }
 }
@@ -317,3 +317,60 @@
     } 
 }
 
+.tf-slider {
+    .swiper-slide {
+        .banner-item {
+            position: relative;
+            .banner-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 3;  // Ensure text is above the overlay
+                text-align: center;
+                color: white;
+                .heading {
+                    font-size: 5rem;
+                    line-height: 4.3rem;
+                    margin-bottom: 1rem;
+                }
+                .sub-heading {
+                    margin-bottom: 2rem;
+                }
+                @media (max-width: 768px) {
+                    .heading {
+                        font-size: 3rem;
+                        line-height: 2.3rem;
+                    }
+
+                    .sub-heading {
+                        font-size: 1rem;
+                        line-height: 1.3rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+            .image-container {
+                position: relative;
+                width: 100%;
+                height: 50rem;
+                overflow: hidden;
+                .banner-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 1;
+                }
+                .image-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.45); // Dark overlay
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}

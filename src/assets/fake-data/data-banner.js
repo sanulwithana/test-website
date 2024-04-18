@@ -5,13 +5,13 @@
 const dataBanner = [
     {
         id: 1,
-        title: 'EXPLORE NFT COLLECTION',
-        desc: 'We are the best way to check the rarity of NFT collection',
+        title: 'HOTDOG SHOWDOWN',
+        desc: 'memoriable day fgosdafsad a dassdad a dasdas das dsa ',
     
     },
     {
         id: 2,
-        title: 'EXPLORE NFT COLLECTION',
+        title: 'PFL',
         desc: 'We are the best way to check the rarity of NFT collection',
     
     },

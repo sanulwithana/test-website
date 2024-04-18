@@ -1,0 +1,14 @@
+@use '../../scss/' as *;
+
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 35, 40, 0.5); // Dark black background
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

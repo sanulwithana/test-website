@@ -1,7 +1,9 @@
 
 import Page404 from "./404";
 import About01 from "./About01";
-import About02 from "./About02";
+import AnnualReport from "./AnnualReport";
+import AvenueDetails from "./AvenueDetails";
+import Awards from "./Awards";
 import Blog from "./Blog";
 
 import BlogDetails from "./BlogDetails";
@@ -16,16 +18,11 @@ import Faq02 from "./Faq02";
 
 
 import Home01 from "./Home01";
-import Home02 from "./Home02";
-import Home03 from "./Home03";
 import ItemDetails from "./ItemDetails";
 
-import Login from "./Login";
 import OurTeam from "./OurTeam";
+import PdfView from "./PdfView";
 
-import RoadMap01 from "./RoadMap01";
-import RoadMap02 from "./RoadMap02";
-import RoadMap03 from "./RoadMap03";
 import SignUp from "./SignUp";
 import Testimonials from "./Testimonials";
 
@@ -44,7 +41,11 @@ const routes = [
   // { path: '/roadmap-v2', component: <RoadMap02 />},
   // { path: '/roadmap-v3', component: <RoadMap03 />},
 
-  { path: '/signin', component: <Login />},
+  // { path: '/signin', component: <Login />},
+  { path: '/awards', component: <Awards />},
+  { path: '/pdf-view/:slug', component: <PdfView />},
+  { path: '/annualreport', component: <AnnualReport />},
+  { path: '/avenueDetail/:slug', component: <AvenueDetails />},
   { path: '/signup', component: <SignUp />},
   { path: '/faq-v1', component: <Faq01 />},
   { path: '/faq-v2', component: <Faq02 />},
