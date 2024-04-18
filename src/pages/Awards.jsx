@@ -11,6 +11,7 @@ import Icon from '../components/icon_svg/IconSvg';
 import Footer2 from '../components/footer/Footer2';
 
 
+
 function Awards(props) {
     return (
         <div className='page-collection'>
