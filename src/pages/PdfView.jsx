@@ -43,18 +43,16 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
      const defaultLayoutPluginInstance = defaultLayoutPlugin({
         toolbarPlugin: {
-            fullScreenPlugin: {
-                // Zoom to fit the screen after entering and exiting the full screen mode
-                onEnterFullScreen: (zoom) => {
-                    zoom(SpecialZoomLevel.PageFit);
-                },
-                onExitFullScreen: (zoom) => {
-                    zoom(SpecialZoomLevel.PageFit);
-                },
+          fullScreenPlugin: {
+            onEnterFullScreen: (zoom) => {
+              zoom(SpecialZoomLevel.PageWidth);
             },
+            onExitFullScreen: (zoom) => {
+              zoom(SpecialZoomLevel.PageWidth);
+            },
+          },
         },
-    });
-    
+      });
  
     //  useEffect(() => {
     //      async function fetchData() {
@@ -74,34 +72,32 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
     //  }
  
      return (
-      <div className='home-2'>
-
-      <div className='tf-container' style={{   backgroundColor: 'rgba(29, 35, 40, 0.2)'}}>
-      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-        <div style={{
-         
-        // border: '1px solid rgba(0, 0, 0, 0.3)',
-        // width: '50%',
-        '@media (max-width: 768px)': {  // Adjust styles for mobile screens
-            height: '90vh',
-        },
-        '@media (min-width: 769px)': {  // Adjust styles for desktop screens
-            height: '60vh',
-        },
-        overflow: 'auto',
-    }}>
-            <Viewer
-                defaultScale={1}  
+        <div className='home-2'>
+        <div className='tf-container' style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'rgba(29, 35, 40, 0.2)',
+          height: '100vh',
+        }}>
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+            <div className='viewer-container' style={{
+              height: '100%',
+              width: '100%',
+              overflow: 'auto',
+            }}>
+              <Viewer
                 fileUrl={`https://cdn.sanity.io/files/eeksv8lg/production/12ff9186e0ceb7c50ebb9418fb310137832359c5.pdf`}
                 plugins={[
-                    defaultLayoutPluginInstance,
+                  defaultLayoutPluginInstance,
                 ]}
-            />
+              />
+            </div>
+          </Worker>
         </div>
-    </Worker>
+        <Footer2 />
       </div>
-      <Footer2 />
-  </div>
+      
 
      );
  }

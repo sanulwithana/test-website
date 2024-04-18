@@ -17,7 +17,7 @@ const menus = [
             {
                 id: 2,
                 sub: 'Awards',
-                links: '/awards'
+                links: '/comming-soon'
             },
         ],
     },
