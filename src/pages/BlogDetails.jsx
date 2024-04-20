@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 
 import Footer2 from '../components/footer/Footer2';
-import PageTitle from '../components/pagetitle/PageTitle';
 
 import img5 from '../assets/images/blog/next-post.jpg'
 import { Link, useParams } from 'react-router-dom';
@@ -11,8 +10,10 @@ import BlockContent from '@sanity/block-content-to-react'
 import client from '../services/client'
 import Loading from '../components/loader/loader';
 import FacebookBox from '../components/facebook_box/FacebookBox';
+import YouTubePlayer from 'react-player/youtube';
 
 const builder = imageUrlBuilder(client);
+
 
 function urlFor(source) {
     return builder.image(source);
@@ -121,6 +122,40 @@ function BlogDetails(props) {
     const [latestPosts, setLatestPosts] = useState(null)
     const { slug } = useParams();
 
+    const serializers = {
+        types: {
+            youtube: ({ node }) => {
+                const { url } = node;
+                console.log('YouTube URL:', url);
+                return (
+                    <div 
+                        className='container' 
+                        style={{
+                            position: 'relative',
+                            paddingBottom: '56.25%', // 16:9 aspect ratio
+                            height: 0,
+                            overflow: 'hidden',
+                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // Added elevation
+                            margin: '7rem 0', // Added margin top and bottom
+                        }}
+                    >
+                        <YouTubePlayer 
+                            url={url}
+                            width={'100%'}
+                            height={'100%'}
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                            }}
+                        />
+                    </div>
+                );
+            },
+        },
+    };
+    
+
     useEffect(() => {
         async function fetchData() {
             getApiResults(slug).then((data) => {
@@ -167,8 +202,10 @@ function BlogDetails(props) {
                                             {getTimeDifference(singlePost.current.publishedAt)}</span>
                                     </div>
 
-                                    <div className="content-inner mb24">
-                                        <BlockContent blocks={singlePost.current.body} projectId={'eeksv8lg'} dataset={'production'} />
+                                    <div className="content-inner mb24" style={{ textAlign: 'justify' }}>
+                                    <BlockContent blocks={singlePost.current.body} projectId={'eeksv8lg'} dataset={'production'} serializers={serializers} />
+                                     
+                                        {/* <Body blocks={singlePost.current.body}/> */}
                                         {/* <p>The Basilisks that players collect are represented with NFTs on Ethereum’s blockchain with real-world value. Players use the Basilisks they have gathered to battle other players to win ether (ETH).</p>
                                         <p>In Balthazar Dragons, players are immersed in a 3D open world to explore and capture dragon-like beasts called Basilisks.  Balthazar Dragons is an upcoming fantasy role-playing game developed on the Ethereum blockchain by a decentralized autonomous organization (DAO) called the Balthazar DAO.</p> */}
                                     </div>
