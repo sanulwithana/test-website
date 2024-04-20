@@ -10,6 +10,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react'
 import client from '../services/client'
 import Loading from '../components/loader/loader';
+import FacebookBox from '../components/facebook_box/FacebookBox';
 
 const builder = imageUrlBuilder(client);
 
@@ -171,6 +172,7 @@ function BlogDetails(props) {
                                         {/* <p>The Basilisks that players collect are represented with NFTs on Ethereum’s blockchain with real-world value. Players use the Basilisks they have gathered to battle other players to win ether (ETH).</p>
                                         <p>In Balthazar Dragons, players are immersed in a 3D open world to explore and capture dragon-like beasts called Basilisks.  Balthazar Dragons is an upcoming fantasy role-playing game developed on the Ethereum blockchain by a decentralized autonomous organization (DAO) called the Balthazar DAO.</p> */}
                                     </div>
+                                    <FacebookBox link={'https://web.facebook.com/?_rdc=1&_rdr'} />
                                     {/* <div className="post-infor">
                                         <div className="title">“The First Huge Metaverse Arena To Arrange Live Sports, Hang Out And Even Make Bets And Wagers”</div>
                                         <div className="content">
