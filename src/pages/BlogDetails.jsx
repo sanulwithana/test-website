@@ -20,23 +20,23 @@ function urlFor(source) {
 export function getTimeDifference(publishDate) {
     const currentDate = new Date();
     const publishDateObj = new Date(publishDate);
-    
+
     const timeDifference = currentDate - publishDateObj;
     const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const monthsDifference = Math.floor(daysDifference / 30);
     const yearsDifference = Math.floor(monthsDifference / 12);
-  
+
     if (yearsDifference >= 1) {
-      return `${yearsDifference} year${yearsDifference > 1 ? 's' : ''} ago`;
+        return `${yearsDifference} year${yearsDifference > 1 ? 's' : ''} ago`;
     } else if (monthsDifference >= 1) {
-      return `${monthsDifference} month${monthsDifference > 1 ? 's' : ''} ago`;
+        return `${monthsDifference} month${monthsDifference > 1 ? 's' : ''} ago`;
     } else if (daysDifference >= 1) {
-      return `${daysDifference} day${daysDifference > 1 ? 's' : ''} ago`;
+        return `${daysDifference} day${daysDifference > 1 ? 's' : ''} ago`;
     } else {
-      return 'Today';
+        return 'Today';
     }
-  }
-  
+}
+
 
 export const getApiResults = async (slug) => {
     try {
@@ -47,6 +47,10 @@ export const getApiResults = async (slug) => {
               "slug": slug.current, 
               title, 
               publishedAt,
+              "author": author->{
+                name,
+                slug,
+              },
               "category": categories[]->{
                 "color": color.hex,
                 title,
@@ -119,7 +123,6 @@ function BlogDetails(props) {
     useEffect(() => {
         async function fetchData() {
             getApiResults(slug).then((data) => {
-                console.log(data.postDetails);
                 setSinglePost(data.postDetails)
                 setcatogaries(data.categoriesData)
                 setLatestPosts(data.latestPosts)
@@ -138,7 +141,10 @@ function BlogDetails(props) {
                             <div className="col-xl-9 col-lg-8 col-md-12">
                                 <div className="detail-inner">
                                     <div className="image">
-                                        <img src={singlePost.current.mainImage.asset.url} alt="Tell" />
+                                        <img style={{
+                                            width: '100%',
+                                            objectFit: 'cover',   // Cover mode
+                                        }} src={urlFor(singlePost.current.mainImage.asset).auto('format').url()} alt="Tell" />
                                     </div>
 
                                     <div className="title">
@@ -150,14 +156,14 @@ function BlogDetails(props) {
                                             <path d="M12 0C8.51067 0 5.67188 2.8388 5.67188 6.32812C5.67188 9.81745 8.51067 12.6562 12 12.6562C15.4893 12.6562 18.3281 9.81745 18.3281 6.32812C18.3281 2.8388 15.4893 0 12 0Z" fill="#ED3659" />
                                             <path d="M19.8734 16.7904C18.1409 15.0313 15.8442 14.0625 13.4062 14.0625H10.5938C8.15588 14.0625 5.85909 15.0313 4.12659 16.7904C2.40258 18.5409 1.45312 20.8515 1.45312 23.2969C1.45312 23.6852 1.76794 24 2.15625 24H21.8438C22.2321 24 22.5469 23.6852 22.5469 23.2969C22.5469 20.8515 21.5974 18.5409 19.8734 16.7904Z" fill="#ED3659" />
                                         </svg>
-                                            Tony Nguyen</span>
+                                            {singlePost.current.author.name}</span>
                                         <span className="date"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2 9C2 7.11438 2 6.17157 2.58579 5.58579C3.17157 5 4.11438 5 6 5H18C19.8856 5 20.8284 5 21.4142 5.58579C22 6.17157 22 7.11438 22 9C22 9.4714 22 9.70711 21.8536 9.85355C21.7071 10 21.4714 10 21 10H3C2.5286 10 2.29289 10 2.14645 9.85355C2 9.70711 2 9.4714 2 9Z" fill="#ED3659" />
                                             <path fillRule="evenodd" clipRule="evenodd" d="M2.58579 21.4142C2 20.8284 2 19.8856 2 18V13C2 12.5286 2 12.2929 2.14645 12.1464C2.29289 12 2.5286 12 3 12H21C21.4714 12 21.7071 12 21.8536 12.1464C22 12.2929 22 12.5286 22 13V18C22 19.8856 22 20.8284 21.4142 21.4142C20.8284 22 19.8856 22 18 22H6C4.11438 22 3.17157 22 2.58579 21.4142ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H16C16.5523 18 17 17.5523 17 17C17 16.4477 16.5523 16 16 16H8Z" fill="#ED3659" />
                                             <path d="M7 3L7 6" stroke="#ED3659" strokeWidth="2" strokeLinecap="round" />
                                             <path d="M17 3L17 6" stroke="#ED3659" strokeWidth="2" strokeLinecap="round" />
                                         </svg>
-                                              {getTimeDifference(singlePost.current.publishedAt)}</span>
+                                            {getTimeDifference(singlePost.current.publishedAt)}</span>
                                     </div>
 
                                     <div className="content-inner mb24">
@@ -197,7 +203,7 @@ function BlogDetails(props) {
                                                 <li><Link to="#" >LIGHT</Link></li>
                                             </ul> */}
                                         </div>
-                                        <div className="widget widget-socical">
+                                        {/* <div className="widget widget-socical">
                                             <h6 className="widget-title">SHARE:</h6>
                                             <ul>
                                                 <li><Link to="#" className="fab fa-facebook"></Link></li>
@@ -205,42 +211,42 @@ function BlogDetails(props) {
                                                 <li><Link to="#" className="fab fa-youtube"></Link></li>
                                             </ul>
 
-                                        </div>
+                                        </div> */}
 
                                     </div>
 
                                     <ul className="post-navigator">
                                         {singlePost.previous != null ?
-                                       ( <li>
-                                            <div className="thump">
-                                                {singlePost ? (
-                                                    <img
-                                                        src={singlePost.previous.mainImage.url}
-                                                        alt="Next Post"
-                                                        style={{
-                                                            width: '12rem', // Set width to 8rem
-                                                            height: '10rem', // Set height to 8rem
-                                                            objectFit: 'cover', // Cover the entire space
-                                                            borderRadius: '0.5rem' // Optional: Add a border radius for rounded corners
-                                                        }}
-                                                    />
-                                                ) : (
-                                                    <img src={img5} alt="PreviosPost" />
-                                                )}
-                                            </div>
-                                            <div className="content">
-                                                <Link to={"/blog/" + singlePost.previous.slug} key={singlePost.previous.slug} className="btn-post btn-prev">PREVIOUS</Link>
-                                                <h6 className="title"><Link to={"/blog/" + singlePost.previous.slug} key={singlePost.previous.slug} >{singlePost.previous.title}</Link></h6>
-                                            </div>
-                                        </li>) : (
-                                            <div className="thump">
-                                        </div>
-                                        )}
+                                            (<li>
+                                                <div className="thump">
+                                                    {singlePost ? (
+                                                        <img
+                                                            src={urlFor(singlePost.previous.mainImage.url).fit('crop').auto('format').url()}
+                                                            alt="Next Post"
+                                                            style={{
+                                                                width: '12rem', // Set width to 8rem
+                                                                height: '10rem', // Set height to 8rem
+                                                                objectFit: 'cover', // Cover the entire space
+                                                                borderRadius: '0.5rem' // Optional: Add a border radius for rounded corners
+                                                            }}
+                                                        />
+                                                    ) : (
+                                                        <img src={img5} alt="PreviosPost" />
+                                                    )}
+                                                </div>
+                                                <div className="content">
+                                                    <Link to={"/blog/" + singlePost.previous.slug} key={singlePost.previous.slug} className="btn-post btn-prev">PREVIOUS</Link>
+                                                    <h6 className="title"><Link to={"/blog/" + singlePost.previous.slug} key={singlePost.previous.slug} >{singlePost.previous.title}</Link></h6>
+                                                </div>
+                                            </li>) : (
+                                                <div className="thump">
+                                                </div>
+                                            )}
                                         {singlePost.next != null && (<li>
                                             <div className="thump">
                                                 {singlePost ? (
                                                     <img
-                                                        src={singlePost.next.mainImage.url}
+                                                        src={urlFor(singlePost.next.mainImage.url).fit('crop').auto('format').url()}
                                                         alt="Next Post"
                                                         style={{
                                                             width: '12rem', // Set width to 8rem
@@ -250,7 +256,7 @@ function BlogDetails(props) {
                                                         }}
                                                     />
                                                 ) : (
-                                                    <img src={img5} alt="Binabox" />
+                                                    <img src={img5} alt="next Post" />
                                                 )}
                                             </div>
                                             <div className="content">
@@ -294,7 +300,7 @@ function BlogDetails(props) {
                                                     <li key={post.slug.current}>
                                                         <div className="post-img">
                                                             <img
-                                                                src={post.mainImage.asset.url}
+                                                                src={urlFor(post.mainImage.asset.url).fit('crop').auto('format').url()}
                                                                 alt="Post New"
                                                                 style={{
                                                                     width: '12rem',       // Fixed width
@@ -307,7 +313,7 @@ function BlogDetails(props) {
                                                             <h6 className="title"><Link to={"/blog/" + post.slug.current} key={post.slug.current}>{post.title}</Link></h6>
                                                             <div className="post-meta">
 
-                                                                <span className="date">{post.publishedAt}</span>
+                                                                <span className="date">{getTimeDifference(post.publishedAt)}</span>
                                                             </div>
                                                         </div>
                                                     </li>
