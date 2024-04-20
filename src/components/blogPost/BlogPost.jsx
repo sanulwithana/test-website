@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import imageUrlBuilder from '@sanity/image-url';
+import client from '../../services/client'
+const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+    return builder.image(source);
+}
 function truncateBodyToThreeLines(body, maxLength = 120) {
     let currentLength = 0;
     let truncatedText = [];
@@ -26,6 +33,25 @@ function truncateBodyToThreeLines(body, maxLength = 120) {
 
     return truncatedText.join(' ');
 }
+export function getTimeDifference(publishDate) {
+    const currentDate = new Date();
+    const publishDateObj = new Date(publishDate);
+
+    const timeDifference = currentDate - publishDateObj;
+    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const monthsDifference = Math.floor(daysDifference / 30);
+    const yearsDifference = Math.floor(monthsDifference / 12);
+
+    if (yearsDifference >= 1) {
+        return `${yearsDifference} year${yearsDifference > 1 ? 's' : ''} ago`;
+    } else if (monthsDifference >= 1) {
+        return `${monthsDifference} month${monthsDifference > 1 ? 's' : ''} ago`;
+    } else if (daysDifference >= 1) {
+        return `${daysDifference} day${daysDifference > 1 ? 's' : ''} ago`;
+    } else {
+        return 'Today';
+    }
+}
 
 const BlogItem = ({ post}) => {
 
@@ -33,7 +59,7 @@ const BlogItem = ({ post}) => {
         <div key={post.slug.current} className="col-xl-4 col-lg-6 col-md-6">
             <article className="tf-blog-item">
                 <div className="image">
-                    <Link to={"/blog/" + post.slug.current} key={post.slug.current}><img src={post.mainImage.asset.url} alt={post.mainImage.alt} /></Link>
+                    <Link to={"/blog/" + post.slug.current} key={post.slug.current}><img src={urlFor(post.mainImage.asset.url).auto('format').url()} alt={post.mainImage.alt} /></Link>
                     {/* <Link to="#" className="category">Club Service</Link> */}
                 </div>
 
@@ -57,7 +83,7 @@ const BlogItem = ({ post}) => {
                             <path d="M5.83398 2.5L5.83398 5" stroke="#ED3659" strokeWidth="2" strokeLinecap="round" />
                             <path d="M14.166 2.5L14.166 5" stroke="#ED3659" strokeWidth="2" strokeLinecap="round" />
                         </svg>
-                        {post.publishedAt}</span>
+                        {getTimeDifference(post.publishedAt)}</span>
 
                 </div>
 
