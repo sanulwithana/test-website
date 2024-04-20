@@ -51,7 +51,7 @@ export const getApiResults = async (slug) => {
                 name,
                 slug,
               },
-              "category": categories[]->{
+              "category": category->{
                 "color": color.hex,
                 title,
                 slug
@@ -90,7 +90,7 @@ export const getApiResults = async (slug) => {
             title,
             slug,
             publishedAt,
-            "category": categories[]->{
+            "category": category->{
               title,
               slug
             },
@@ -149,7 +149,7 @@ function BlogDetails(props) {
 
                                     <div className="title">
                                         <h3 >{singlePost.current.title}</h3>
-                                        <div className="category" style={{ backgroundColor: `${singlePost.current.category[0].color}` }}>{singlePost.current.category[0].title}</div>
+                                        <div className="category" style={{ backgroundColor: `${singlePost.current.category.color}` }}>{singlePost.current.category.title}</div>
                                     </div>
                                     <div className="meta">
                                         <span className="admin"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
