@@ -135,10 +135,10 @@ function Home01(props) {
             {/* <Banner01 data={dataBanner} /> */}
             {/* <Logo /> */}
             <About1 data={catogaries} stats={stats} />
-            {/* <div className="tf-heading wow fadeInUp">
-                <h2 className="heading">Our Signature Projects</h2>
-            </div> */}
-            {/* <Collection03 data={dataCollection} /> */}
+            <div className="tf-heading wow fadeInUp">
+                <h2 className="heading">OUR FEATURED PROJECTS</h2>
+            </div>
+            <Collection03 data={dataCollection} />
            
             {/* <Work data={dataWork} /> */}
             {/* <Faqs data={dataFaqs} /> */}
