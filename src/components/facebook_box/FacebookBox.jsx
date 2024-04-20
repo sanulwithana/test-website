@@ -12,7 +12,7 @@ const FacebookBox = ({ link }) => {
       <div className="gradient-box">
         <img src={img1} alt="Facebook Album" className="logo" />
         <div className="text">
-          <h4 style={{color:"white"}}>View Album</h4></div>
+          <h4 style={{color:"white"}}>Check Out The Photo Album</h4></div>
       </div>
     </div>
   );

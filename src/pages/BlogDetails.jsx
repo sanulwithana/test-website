@@ -49,6 +49,7 @@ export const getApiResults = async (slug) => {
               "slug": slug.current, 
               title, 
               publishedAt,
+              "facebookLink": facebookLink,
               "author": author->{
                 name,
                 slug,
@@ -126,35 +127,64 @@ function BlogDetails(props) {
         types: {
             youtube: ({ node }) => {
                 const { url } = node;
-                console.log('YouTube URL:', url);
                 return (
-                    <div 
-                        className='container' 
-                        style={{
-                            position: 'relative',
-                            paddingBottom: '56.25%', // 16:9 aspect ratio
-                            height: 0,
-                            overflow: 'hidden',
-                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // Added elevation
-                            margin: '7rem 0', // Added margin top and bottom
-                        }}
-                    >
-                        <YouTubePlayer 
-                            url={url}
-                            width={'100%'}
-                            height={'100%'}
+                    url && (
+                        <div
+                            className='container'
                             style={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
+                                position: 'relative',
+                                paddingBottom: '56.25%', // 16:9 aspect ratio
+                                height: 0,
+                                overflow: 'hidden',
+                                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // Added elevation
+                                margin: '7rem 0', // Added margin top and bottom
                             }}
-                        />
-                    </div>
+                        >
+                            <YouTubePlayer
+                                url={url}
+                                width={'80%'}
+                                height={'100%'}
+                                style={{
+                                    display: 'block',
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                }}
+                            />
+                        </div>
+                    )
+
+                );
+            },
+            image: ({ node }) => {
+                console.log("iamge>>>>", node.asset)
+                if (node.asset === undefined) {
+                    return;
+                }
+                const imageUrl = urlFor(node.asset).width(1000).auto('format').url();
+
+                return (
+                    node.asset?._ref && (<img
+                        src={imageUrl}
+                        alt="Description"
+                        style={{
+                            display: 'block',
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            maxWidth: '100%',
+                            height: 'auto',
+                            marginTop: '5rem',
+                            marginBottom: '5rem',
+                            paddingLeft: '2rem',
+                            paddingRight: '2rem',
+                        }}
+                    />)
                 );
             },
         },
     };
-    
+
 
     useEffect(() => {
         async function fetchData() {
@@ -203,13 +233,16 @@ function BlogDetails(props) {
                                     </div>
 
                                     <div className="content-inner mb24" style={{ textAlign: 'justify' }}>
-                                    <BlockContent blocks={singlePost.current.body} projectId={'eeksv8lg'} dataset={'production'} serializers={serializers} />
-                                     
+                                        <BlockContent blocks={singlePost.current.body} projectId={'eeksv8lg'} dataset={'production'} serializers={serializers} />
+
                                         {/* <Body blocks={singlePost.current.body}/> */}
                                         {/* <p>The Basilisks that players collect are represented with NFTs on Ethereum’s blockchain with real-world value. Players use the Basilisks they have gathered to battle other players to win ether (ETH).</p>
                                         <p>In Balthazar Dragons, players are immersed in a 3D open world to explore and capture dragon-like beasts called Basilisks.  Balthazar Dragons is an upcoming fantasy role-playing game developed on the Ethereum blockchain by a decentralized autonomous organization (DAO) called the Balthazar DAO.</p> */}
+                                        {singlePost.current.facebookLink && <FacebookBox link={singlePost.current.facebookLink} />}
+
                                     </div>
-                                    <FacebookBox link={'https://web.facebook.com/?_rdc=1&_rdr'} />
+
+
                                     {/* <div className="post-infor">
                                         <div className="title">“The First Huge Metaverse Arena To Arrange Live Sports, Hang Out And Even Make Bets And Wagers”</div>
                                         <div className="content">
