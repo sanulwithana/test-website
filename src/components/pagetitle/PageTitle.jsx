@@ -30,11 +30,11 @@ function PageTitle(props) {
     
     return (
         <section className="tf-page-title" style={{ backgroundImage: `linear-gradient(to right, ${firstColor}, ${secondColor})` }}>
-    <div className="tf-container" >
+    <div className="tf-containers" >
         <div className="row">
             <div className="col-md-12">
                 <h2 className="page-title-heading" style={{ alignSelf: 'center' }}>{title.toUpperCase()}</h2>
-                {/* { description && <p className="sub-heading">{description}</p>} */}
+                { description && <p className="sub-heading"  style={{ wordWrap: 'break-word', maxWidth: '80%',paddingLeft:'20%' }} >{description}</p>}
             </div>
         </div>
     </div>                    

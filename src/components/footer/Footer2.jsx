@@ -74,10 +74,9 @@ function Footer2(props) {
 
                                     <ul className="menu-bottom">
                                         <li><Link to="/">Home</Link></li>
-                                        <li><Link to="/about-v1">About</Link></li>
-                                        <li><Link to="/roadmap-v1">Roadmap</Link></li>
-                                        <li><Link to="/our-team">Our Team</Link></li>
-                                        <li><Link to="/faq-v1">FAQs</Link></li>
+                                        <li><Link to="/annualreport">About Us</Link></li>
+                                        <li><Link to="/blog">Avenues</Link></li>
+                                        <li><Link to="/contact">Contact Us</Link></li>
                                     </ul>
                                 </div>
                             </div>

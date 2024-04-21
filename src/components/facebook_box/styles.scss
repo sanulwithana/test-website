@@ -1,0 +1,61 @@
+@use '../../scss/' as *;
+
+
+.facebook-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px; // Reduced height
+  margin-bottom: 10rem;
+
+
+  transition: box-shadow 0.3s ease;
+  // padding: 0 20px; // Added horizontal padding
+
+  &.dark-mode {
+    background-color: #242526;
+    color: #ffffff;
+  }
+
+
+
+  .gradient-box {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px; // Rounded corners 
+    height: 100%;
+    background: linear-gradient(to right, #5c84db, #3b6dda);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      box-shadow: 0px 6px 8px rgba(109, 131, 253, 0.983);
+    }
+
+    .logo {
+      width: 40px; // Fixed width
+      height: 40px; // Fixed height
+      object-fit: contain; // Ensure image is contained within the fixed dimensions
+      filter: brightness(0) invert(1); // Tint the image white
+      padding: 0 20px ;
+
+      @media (max-width: 768px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .text {
+      font-size: 1em;
+      font-weight: 600;
+      color: 'white';
+      padding: 0 5rem; // Added horizontal padding to text
+
+      @media (max-width: 768px) {
+        font-size: 0.8em;
+        color: 'white';
+      }
+    }
+  }
+}

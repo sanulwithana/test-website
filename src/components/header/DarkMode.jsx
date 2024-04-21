@@ -40,7 +40,7 @@ const DarkMode = () => {
             </Link>
             <Link className='moon mode-switch' to="#" 
                 onClick={e => switchTheme(e)}  >
-                <img src={imgsun} alt="" />
+              <img src={imgsun} style={{ filter: 'brightness(0) invert(1)', }} alt="" />
             </Link>
 
         </div>
