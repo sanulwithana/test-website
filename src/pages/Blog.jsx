@@ -53,6 +53,10 @@ function Blog(props) {
             slug,
             publishedAt,
             body,
+            "author": author->{
+                name,
+                slug,
+            },
             mainImage{
                 asset->{
                     _id,

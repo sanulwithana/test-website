@@ -12,7 +12,7 @@ const ARItem = (props) => {
     <div className="image-overlay"></div>
       <div className="custom-content">
         <div className="custom-text-content">
-          <h3 className= "title">{title}</h3>
+          <h3 className= "custom-title">{title}</h3>
         </div>
       </div>
     </article>
