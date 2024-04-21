@@ -2,17 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import img from '../assets/images/background/bg-comming-soon.png'
-import logo from '../assets/images/logo/logo_dark.png'
-
+import logo from '../assets/images/logo/logo-footer.svg';
 function CommingSoon(props) {
     return (
             <section className="comming-soon ">
                 <img src={img} alt="Binabox" className="bg-comming-soon" />
                 <div className="comming-soon-inner">
                     <div className="logo">
-                        <Link to="/" ><img src={logo} alt="Binabox" id="logo_header" /></Link>
+                        <Link to="/" ><img src={logo} style={{width: "20rem", height: " auto"}} alt="RACIIT" id="logo_header" /></Link>
                     </div>
-                    <h2 className="title">COMMING SOON</h2>
+                    <h2 className="title">COMING SOON</h2>
                     <div className="countdown">
                         <span className="js-countdown" data-timer="1655555" data-labels=" DAYS,  HOURS  , MINUTES  , SECONDS "></span>
                     </div>

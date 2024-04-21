@@ -46,15 +46,15 @@ function Contact(props) {
     return (
         <div>
 
-          
+
 
             <section className="tf-contact ">
                 <div className="tf-container">
-                <div className="tf-heading">
-                                <h2 className="heading">Get In Touch</h2>
-                                <p className="sub-heading">Reach out and join the RACIIT community today.</p>
-                            </div>
-                    <div className="row"> 
+                    <div className="tf-heading">
+                        <h2 className="heading">Get In Touch</h2>
+                        <p className="sub-heading">Reach out and join the RACIIT community today.</p>
+                    </div>
+                    <div className="row">
                         <div className="col-md-12">
                             <div className="tf-infor-wrap">
                                 <div className="tf-infor">
@@ -81,89 +81,89 @@ function Contact(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="row justify-content-center"> 
+                    <div className="row justify-content-center">
                         <div className="col-xl-6 col-lg-8 col-md-9">
-                        <div className="tf-heading">
-                              
+                            <div className="tf-heading">
+
                             </div>
                             {/*  */}
-                            <form 
-            action="https://submit-form.com/81HsrhAWU" 
-            method="post" 
-            id="commentform" 
-            className="comment-form"
-            onSubmit={handleSubmit}
-        >
-            <div className="form-inner">
-                <fieldset className="name">
-                    <input 
-                        type="text" 
-                        id="name" 
-                        placeholder="Name" 
-                        className="tb-my-input" 
-                        name="name" 
-                        tabIndex="2" 
-                        aria-required="true" 
-                        required 
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </fieldset>    
-                <fieldset className="email">
-                    <input 
-                        type="email" 
-                        id="email" 
-                        placeholder="Enter your email" 
-                        className="tb-my-input" 
-                        name="email" 
-                        tabIndex="2" 
-                        aria-required="true" 
-                        required 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </fieldset>
-                <fieldset className="phone">
-                    <input 
-                        type="tel" 
-                        id="phone" 
-                        placeholder="Phone Number" 
-                        className="tb-my-input" 
-                        name="phone" 
-                        tabIndex="2" 
-                        aria-required="true" 
-                        required 
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
-                </fieldset>
-                
-                <fieldset className="message">
-                    <textarea 
-                        id="message" 
-                        name="message" 
-                        rows="4" 
-                        placeholder="Message" 
-                        tabIndex="4" 
-                        aria-required="true" 
-                        required
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                    ></textarea>
-                </fieldset>
-            </div>
+                            <form
+                                action="https://submit-form.com/81HsrhAWU"
+                                method="post"
+                                id="commentform"
+                                className="comment-form"
+                                onSubmit={handleSubmit}
+                            >
+                                <div className="form-inner">
+                                    <fieldset className="name">
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            placeholder="Name"
+                                            className="tb-my-input"
+                                            name="name"
+                                            tabIndex="2"
+                                            aria-required="true"
+                                            required
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                        />
+                                    </fieldset>
+                                    <fieldset className="email">
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            placeholder="Enter your email"
+                                            className="tb-my-input"
+                                            name="email"
+                                            tabIndex="2"
+                                            aria-required="true"
+                                            required
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
+                                    </fieldset>
+                                    <fieldset className="phone">
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            placeholder="Phone Number"
+                                            className="tb-my-input"
+                                            name="phone"
+                                            tabIndex="2"
+                                            aria-required="true"
+                                            required
+                                            value={phone}
+                                            onChange={(e) => setPhone(e.target.value)}
+                                        />
+                                    </fieldset>
 
-            <div className="btn-submit">
-                <button className="tf-button style-2" type="submit">SEND</button>
-            </div>
-        </form>
+                                    <fieldset className="message">
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows="4"
+                                            placeholder="Message"
+                                            tabIndex="4"
+                                            aria-required="true"
+                                            required
+                                            value={message}
+                                            onChange={(e) => setMessage(e.target.value)}
+                                        ></textarea>
+                                    </fieldset>
+                                </div>
+
+                                <div className="btn-submit">
+                                    <button className="tf-button style-2" type="submit">SEND</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </section>
 
             <Footer2 />
-            
+
         </div>
     );
 }

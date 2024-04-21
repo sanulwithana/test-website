@@ -322,7 +322,7 @@
 
         .sub-menu {
             background: transparent;
-            padding: 15px 0;
+            // padding: 15px 0;
             li a {
                 color: var(--primary-color3);
             }
@@ -647,13 +647,27 @@
     }
 }
 
+.logo-light, .logo-dark {
+    display: block;
+    height: auto;
+    margin-left: 4rem;
+}
 
 .logo-light {
-    display: block;
+    width: 15rem;
 }
 
 .logo-dark {
     display: none;
+    width: 15rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .logo-light, .logo-dark {
+        width: 10rem; /* Adjust width for smaller screens */
+        margin-left: 2rem; /* Adjust margin for smaller screens */
+    }
 }
 
 .is_dark {
