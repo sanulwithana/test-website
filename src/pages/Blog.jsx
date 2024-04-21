@@ -47,7 +47,7 @@ function Blog(props) {
 
 
     useEffect(() => {
-        client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...6]{
+        client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...1]{
             _id,
             title,
             slug,
@@ -81,11 +81,13 @@ function Blog(props) {
 
 
     async function fetchNextPage() {
-        console.log(searchTerm);
-        if (searchTerm) {
+       
+        if (searchTerm || searchTerm !== '') {
+         
             return [];
         }
         if (!lastIdRef.current) {
+            console.log('empty>>>>>',lastIdRef.current);
             return [];
         }
     
@@ -96,6 +98,7 @@ function Blog(props) {
                     || (publishedAt == $lastPublishedAt && _id < $lastId)
                 )] 
                 | order(publishedAt desc, _id desc) [0...3]{
+                    _id,
                     title,
                     slug,
                     body,
@@ -119,8 +122,6 @@ function Blog(props) {
                 lastPublishedAtRef.current = data[data.length - 1].publishedAt;
                 lastIdRef.current = data[data.length - 1]._id;
                 setPostData(prev => [...prev, ...data]);
-            } else {
-                lastIdRef.current = null;
             }
     
             return data;
@@ -192,7 +193,7 @@ function Blog(props) {
                     {(!loading && searchTerm !== null && postData.length === 0 ) ?( <p>No results found</p>): (  <div className="row">
                         {postData &&
                             postData.map((post, idx) => (
-                                <BlogItem post={post} />
+                                <BlogItem post={post} key={idx} />
                             ))
                         }
 
