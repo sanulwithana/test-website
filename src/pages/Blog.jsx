@@ -47,7 +47,7 @@ function Blog(props) {
 
 
     useEffect(() => {
-        client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...1]{
+        client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...9]{
             _id,
             title,
             slug,
@@ -96,7 +96,7 @@ function Blog(props) {
                     publishedAt < $lastPublishedAt
                     || (publishedAt == $lastPublishedAt && _id < $lastId)
                 )] 
-                | order(publishedAt desc, _id desc) [0...3]{
+                | order(publishedAt desc, _id desc) [0...6]{
                     _id,
                     title,
                     slug,
@@ -147,6 +147,10 @@ function Blog(props) {
         slug,
         publishedAt,
         body,
+        "author": author->{
+            name,
+            slug,
+        },
         mainImage{
             asset->{
                 _id,

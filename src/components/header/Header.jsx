@@ -39,7 +39,7 @@ const Header = () => {
     return (
 
         <header className={`header ${scroll ? 'is-fixed' : ''}`}>
-                <div className="tf-container">
+                <div className="tf-container" >
                     <div className="row">
                         <div className="col-md-12">                              
                             <div id="site-header-inner">                                 
