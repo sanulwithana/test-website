@@ -47,7 +47,7 @@ function Blog(props) {
 
 
     useEffect(() => {
-        client.fetch(`*[_type=="post"] | order(publishedAt desc) [0...6]{
+        client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...6]{
             _id,
             title,
             slug,
@@ -81,14 +81,14 @@ function Blog(props) {
 
 
     async function fetchNextPage() {
-        console.log(searchTerm)
-        if (searchTerm !== null) {
+        console.log(searchTerm);
+        if (searchTerm) {
             return [];
         }
         if (!lastIdRef.current) {
             return [];
         }
-
+    
         try {
             const data = await client.fetch(`
                 *[_type == "post" && (
@@ -99,6 +99,10 @@ function Blog(props) {
                     title,
                     slug,
                     body,
+                    "author": author->{
+                        name,
+                        slug,
+                    },
                     publishedAt,
                     mainImage{
                         asset->{
@@ -110,7 +114,7 @@ function Blog(props) {
                 }`,
                 { lastPublishedAt: lastPublishedAtRef.current, lastId: lastIdRef.current }
             );
-
+    
             if (data.length > 0) {
                 lastPublishedAtRef.current = data[data.length - 1].publishedAt;
                 lastIdRef.current = data[data.length - 1]._id;
@@ -118,12 +122,13 @@ function Blog(props) {
             } else {
                 lastIdRef.current = null;
             }
-
+    
             return data;
         } catch (error) {
             console.error('Error fetching next page:', error);
         }
     }
+    
 
 
     const handleInputChange = (event) => {
