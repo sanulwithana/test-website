@@ -5,12 +5,13 @@ function Icon({ color, gap }) {
   
   const iconStyle = {
     fill: color || "#FFD700", 
-    width: `236px`, // Dynamic width with added gap
-    height: '230px',
+    width: `256px`, // Dynamic width with added gap
+    height: '240px',
     position: 'relative',
     right:'1rem',
-    backgroundColor:"white",
-    // padding : '-1rem'
+    backgroundColor:"rgba(28, 36, 51, 0.4)",
+    borderRadius: "1rem",
+    padding : ' 0 1rem'
   };
 
   return (

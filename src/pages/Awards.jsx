@@ -10,7 +10,7 @@ import { AutoTextSize } from 'auto-text-size'
 function Awards(props) {
     return (
         <div className='page-collection'>
-            <PageTitle title='Awards' />
+            <PageTitle title='Awards' color="#3324ff" description={"Uniting hearts, Building dreams, Creating legacies"} />
 
             <section className="tf-container">
                 {AwardItem()}
@@ -35,47 +35,12 @@ export function AwardItem(award) {
       };
     
       // Set color based on provided value or default to gold
-      const mainColor = colors["bronze"] || colors.gold;
+      const mainColor = colors["silver"] || colors.gold;
     
-    // const textRef = useRef(null);
-
-    // useEffect(() => {
-    //     const resizeText = () => {
-    //         const text = textRef.current;
-    //         const container = text.parentNode;
-
-    //         // Reset font size to default to recalculate based on container size
-    //         text.style.fontSize = '2.3rem';
-
-    //         // Reduce font size until it fits
-    //         while (text.scrollWidth > container.offsetWidth || text.scrollHeight > container.offsetHeight) {
-    //             const fontSize = parseFloat(text.style.fontSize.replace('rem', ''));
-
-    //             if (fontSize <= 0.5) {
-    //                 break;  // Prevent infinite loop
-    //             }
-
-    //             const newFontSize = fontSize - 0.1;
-    //             text.style.fontSize = `${newFontSize}rem`;
-    //         }
-    //     };
-
-    //     // Initial font size adjustment
-    //     resizeText();
-
-    //     // Add event listener for window resize
-    //     window.addEventListener('resize', resizeText);
-
-    //     // Clean up the event listener
-    //     return () => {
-    //         window.removeEventListener('resize', resizeText);
-    //     };
-    // }, []);
-
     return (
         <div className="tf-container">
-            <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-                <h2 className="heading">2023/24</h2>
+            <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '5rem' ,marginTop: "4rem", }}>
+                <h2 className="heading" style={{color:"#ffff"}}> sasdaasdasd dasasasddsas dassadsad dsaasasds 2023/24</h2>
             </div>
 
             <div className="row justify-content-center" style={{ gap: '10px' }}> {/* Reduced gap */}
@@ -86,7 +51,7 @@ export function AwardItem(award) {
                                 <div className="image">
                                     <Icon color={mainColor} /> {/* Use your Icon component here */}
                                     <div className='textSizeBox'>
-                                        <AutoTextSize style={{color: `${mainColor}` , lineHeight: '1.5rem'}} minFontSizePx={10} maxFontSizePx={30} mode='box'>hesas adssdsdaasddsasada dsadsadsa dsadasds sasdadsd ssdasdasddsa  saddsasdasdadsadsadsa dsasdadsadsa sdaasddsadas  </AutoTextSize>
+                                        <AutoTextSize style={{color: `${mainColor}` , lineHeight: '2.3rem',alignSelf:"center",fontWeight: "500"}} minFontSizePx={7} maxFontSizePx={30} mode='box'>Most Outstanding Club Of The Year </AutoTextSize>
                                     </div>
                                     {/* <p style={{fontSize :"2rem"}}>SA dsasasd asddsadsa </p> */}
                                 </div>
