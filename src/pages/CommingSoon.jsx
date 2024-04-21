@@ -6,7 +6,7 @@ import logo from '../assets/images/logo/logo-footer.svg';
 function CommingSoon(props) {
     return (
         <section className="comming-soon error-page">
-                <img src={img} alt="Binabox" className="bg-comming-soon" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                <img src={img} alt="RACIIT" className="bg-comming-soon" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                 <div className="comming-soon-inner">
                     <div className="logo">
                         <Link to="/" ><img src={logo} style={{width: "20rem", height: " auto"}} alt="RACIIT" id="logo_header" /></Link>

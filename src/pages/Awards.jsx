@@ -53,7 +53,7 @@ export function AwardItem() {
                                 <div className="image" style={{ marginBottom: '0.5rem' }}>
                                    
                                     <Icon color="#FFD700" />
-                                    {/* <img src={idx.img} alt="Binabox" /> */}
+                                    {/* <img src={idx.img} alt="RACIIT" /> */}
                                 </div>
                                                    
                                                 </div>

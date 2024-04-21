@@ -42,7 +42,7 @@ function Team2(props) {
                                 <div key={idx.id} className="col-lg-3 col-md-4 col-sm-6 col-12 ">
                                     <div className="tf-team">
                                             <div className="image">
-                                                <img src={idx.img} alt="Binabox" />
+                                                <img src={idx.img} alt="RACIIT" />
                                             </div>
                                             <h4 className="name"><Link to="/our-team">{idx.name}</Link></h4>
                                             <p className="position">{idx.position}</p>

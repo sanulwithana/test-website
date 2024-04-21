@@ -26,7 +26,7 @@ function OurTeam(props) {
                                 <div className="swiper-wrapper">
                                     <div className="swiper-slide">
                                         <div className="slider-item">
-                                            <img src={img} alt="Binabox" />
+                                            <img src={img} alt="RACIIT" />
                                         </div>
                                     </div>
                                 </div>
@@ -45,13 +45,13 @@ function OurTeam(props) {
                                 <div className="contact-infor">
                                     <div className="contact-infor-box">
                                         <span className="icon">
-                                            <img src={icon1} alt="Binabox" />
+                                            <img src={icon1} alt="RACIIT" />
                                         </span>
                                         <p>Info@yourcompany.com</p>
                                     </div>
                                     <div className="contact-infor-box">
                                         <span className="icon">
-                                            <img src={icon2} alt="Binabox" />
+                                            <img src={icon2} alt="RACIIT" />
                                         </span>
                                         <p>+84 0977425031</p>
                                     </div>

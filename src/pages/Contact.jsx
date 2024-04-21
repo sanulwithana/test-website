@@ -59,21 +59,21 @@ function Contact(props) {
                             <div className="tf-infor-wrap">
                                 <div className="tf-infor">
                                     <div className="icon">
-                                        <img src={icon1} alt="Binabox" />
+                                        <img src={icon1} alt="RACIIT" />
                                     </div>
                                     <h3 className="title">Location</h3>
                                     <p className="sub-title">57 Ramakrishna Rd, Colombo 00600</p>
                                 </div>
                                 <div className="tf-infor">
                                     <div className="icon">
-                                        <img src={icon2} alt="Binabox" />
+                                        <img src={icon2} alt="RACIIT" />
                                     </div>
                                     <h3 className="title">Email</h3>
                                     <p className="sub-title">rciit.3220@gmail.com</p>
                                 </div>
                                 <div className="tf-infor">
                                     <div className="icon">
-                                        <img src={icon3} alt="Binabox" />
+                                        <img src={icon3} alt="RACIIT" />
                                     </div>
                                     <h3 className="title">Phone Number</h3>
                                     <p className="sub-title">+94 76 536 8956</p>

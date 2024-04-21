@@ -6,7 +6,7 @@ import img from '../assets/images/background/bg-comming-soon.png'
 function Page404(props) {
     return (
         <section className="comming-soon error-page">
-           <img src={img} alt="Binabox" className="bg-comming-soon" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+           <img src={img} alt="RACIIT" className="bg-comming-soon" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
             <div className="comming-soon-inner">
                 <div className="image">
                     <svg width="147" height="171" viewBox="0 0 147 171" fill="none" xmlns="http://www.w3.org/2000/svg">
