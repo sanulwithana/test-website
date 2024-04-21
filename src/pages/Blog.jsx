@@ -83,7 +83,6 @@ function Blog(props) {
     async function fetchNextPage() {
        
         if (searchTerm || searchTerm !== '') {
-         
             return [];
         }
         if (!lastIdRef.current) {
@@ -122,8 +121,10 @@ function Blog(props) {
                 lastPublishedAtRef.current = data[data.length - 1].publishedAt;
                 lastIdRef.current = data[data.length - 1]._id;
                 setPostData(prev => [...prev, ...data]);
+            }else{
+                lastIdRef.current = null;
             }
-    
+          
             return data;
         } catch (error) {
             console.error('Error fetching next page:', error);
