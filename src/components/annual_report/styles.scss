@@ -63,16 +63,19 @@
   color: white; // Text color
   text-align: center; // Center text
 
- 
+
 }
 
 .custom-title {
-  margin-bottom: 15px; 
-  color: white; 
+  margin-bottom: 15px;
+  color: white;
+
   @media (max-width: 768px) {
-    font-size: 2.1rem; 
-    padding: 0 2rem;// Adjusted font size for mobile
-  }// Increased margin
+    font-size: 2.1rem;
+    padding: 0 2rem; // Adjusted font size for mobile
+  }
+
+  // Increased margin
 }
 
 .custom-meta {
@@ -83,4 +86,68 @@
 .custom-btn-readmore {
   align-self: flex-start;
   margin-top: 6rem;
+}
+
+.tf-container {
+  .heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .row.justify-content-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; // Adjust gap between items
+  }
+
+  .tf-product {
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      text-align: center;
+
+
+      .textSizeBox {
+        width: 15rem; 
+        // max-height: 200px;
+        justify-content: center;
+        align-items: center;
+        height: 13.5rem;
+        // font-weight: 500;
+        // background-color: aqua;
+        text-align: center;
+        line-height: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -50%);
+      }
+
+      .image {
+        position: relative;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          color: grey;
+          max-width: 150px; // Set to the width of the containe
+          font-weight: 500;
+          text-align: center;
+          line-height: 1.5rem;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-53%, -50%);
+        }
+      }
+
+    }
+
+    .name {
+      text-align: center;
+    }
+  }
 }

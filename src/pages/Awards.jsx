@@ -1,76 +1,103 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
-
-import { Accordion } from 'react-bootstrap-accordion';
-
 import { Link } from 'react-router-dom';
-import Footer from '../components/footer';
-
 import data from '../assets/fake-data/data-collection'
 import Icon from '../components/icon_svg/IconSvg';
 import Footer2 from '../components/footer/Footer2';
-
-
+import "../components/annual_report/styles.scss";
+import { AutoTextSize } from 'auto-text-size'
 
 function Awards(props) {
     return (
         <div className='page-collection'>
             <PageTitle title='Awards' />
 
-            <section className="tf-collection-inner">
+            <section className="tf-container">
                 {AwardItem()}
                 {AwardItem()}
                 {AwardItem()}
             </section>
-                
+
             <Footer2 />
-            
+
         </div>
     );
 }
 
 export default Awards;
 
-export function AwardItem() {
-    return <div className="tf-container">
-        <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-            <h2 className="heading">2023/24</h2>
-        </div>
+export function AwardItem(award) {
+      // Define color variables
+      const colors = {
+        bronze: '#CD7F32',
+        silver: '#C0C0C0',
+        gold: '#FFD700'
+      };
+    
+      // Set color based on provided value or default to gold
+      const mainColor = colors["bronze"] || colors.gold;
+    
+    // const textRef = useRef(null);
 
-        <div className="row ">
-            <div className="col-lg-2 col-md-2">
+    // useEffect(() => {
+    //     const resizeText = () => {
+    //         const text = textRef.current;
+    //         const container = text.parentNode;
+
+    //         // Reset font size to default to recalculate based on container size
+    //         text.style.fontSize = '2.3rem';
+
+    //         // Reduce font size until it fits
+    //         while (text.scrollWidth > container.offsetWidth || text.scrollHeight > container.offsetHeight) {
+    //             const fontSize = parseFloat(text.style.fontSize.replace('rem', ''));
+
+    //             if (fontSize <= 0.5) {
+    //                 break;  // Prevent infinite loop
+    //             }
+
+    //             const newFontSize = fontSize - 0.1;
+    //             text.style.fontSize = `${newFontSize}rem`;
+    //         }
+    //     };
+
+    //     // Initial font size adjustment
+    //     resizeText();
+
+    //     // Add event listener for window resize
+    //     window.addEventListener('resize', resizeText);
+
+    //     // Clean up the event listener
+    //     return () => {
+    //         window.removeEventListener('resize', resizeText);
+    //     };
+    // }, []);
+
+    return (
+        <div className="tf-container">
+            <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                <h2 className="heading">2023/24</h2>
             </div>
-            <div className="col-lg-9 col-md-8 ">
-                <div className="row">
-                <div className="row">
-                                {
-                                    data.slice(0,9).map(idx => (
-                                        <div key={idx.id} className="col-lg-3 col-md-6 col-sm-6 col-12 ">
-                                            <div className="tf-product">
-                                        
-                                                <div className="image">
-                                                <p  style={{color: "grey",position:'absolute',top:'7.6rem',maxWidth:"170px",left:"3.7rem", zIndex: 200 ,fontSize:'1.3rem',fontWeight:'500',textAlign:'center',lineHeight:'1.5rem'}}>the medal of goasddsa dasdsadassda assdsad dsadsasda ddd ddddd</p>
-                                <div className="image" style={{ marginBottom: '0.5rem' }}>
-                                   
-                                    <Icon color="#FFD700" />
-                                    {/* <img src={idx.img} alt="RACIIT" /> */}
-                                </div>
-                                                   
-                                                </div>
-                                                <h6 className="name"><Link to="/item-details"> </Link></h6>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
 
+            <div className="row justify-content-center" style={{ gap: '10px' }}> {/* Reduced gap */}
+                {data.slice(0, 9).map((item, idx) => (
+                    <div key={idx} className="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                        <div className="tf-product">
+                            <div className="image-wrapper">
+                                <div className="image">
+                                    <Icon color={mainColor} /> {/* Use your Icon component here */}
+                                    <div className='textSizeBox'>
+                                        <AutoTextSize style={{color: `${mainColor}` , lineHeight: '1.5rem'}} minFontSizePx={10} maxFontSizePx={30} mode='box'>hesas adssdsdaasddsasada dsadsadsa dsadasds sasdadsd ssdasdasddsa  saddsasdasdadsadsadsa dsasdadsadsa sdaasddsadas  </AutoTextSize>
+                                    </div>
+                                    {/* <p style={{fontSize :"2rem"}}>SA dsasasd asddsadsa </p> */}
+                                </div>
 
                             </div>
-
-
-                </div>
-
+                    
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
-
-    </div>;
+    );
 }
+

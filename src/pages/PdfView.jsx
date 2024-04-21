@@ -113,7 +113,7 @@ function PdfView(props) {
           <YouTubePlayer
             url={pdfReport.youTube}
             width={'80%'}
-            // height={"100%"}
+            height={"70%"}
             style={{
               display: 'block',
               position: 'absolute',
