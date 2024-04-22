@@ -6,18 +6,18 @@ const menus = [
     },
     {
         id: 2,
-        name: 'About',
+        name: 'About Us',
         links: '#',
         namesub: [
             {
                 id: 1,
-                sub: 'Annual Reports',
+                sub: 'Annual Report',
                 links: '/annualreport'
             },
             {
                 id: 2,
                 sub: 'Awards',
-                links: '/comming-soon'
+                links: '/awards'
             },
         ],
     },

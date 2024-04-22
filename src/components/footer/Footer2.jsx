@@ -3,7 +3,7 @@ import React , {useState , useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-import logo from '../../assets/images/logo/logo-footer.png';
+import logo from '../../assets/images/logo/logo-footer.svg';
 
 
 function Footer2(props) {
@@ -68,7 +68,7 @@ function Footer2(props) {
                                 <div className="bottom">
                                 
                                    <div className="content-left">
-                                        <img src={logo} alt="Binabox" />
+                                        <img src={logo}  className='logo-dark' style={{width:"12rem"}} alt="RACIIT" />
                                         <p className="copy-right">Rotaract Club Of IIT {currentYear} - ALL rights reserved</p>
                                    </div>
 

@@ -15,39 +15,9 @@ function Blog(props) {
     const lastPublishedAtRef = useRef(null);
     const lastIdRef = useRef(null);
 
-    function truncateBodyToThreeLines(body, maxLength = 120) {
-        let currentLength = 0;
-        let truncatedText = [];
-
-        for (let block of body) {
-            if (currentLength >= maxLength) {
-                break;
-            }
-
-            if (block._type === 'block' && block.style === 'normal') {
-                const text = block.children[0].text.trim();
-
-                if (currentLength + text.length <= maxLength) {
-                    truncatedText.push(text);
-                    currentLength += text.length;
-                } else {
-                    const availableChars = maxLength - currentLength;
-                    truncatedText.push(text.substring(0, availableChars) + '.....');
-                    break;
-                }
-            }
-        }
-
-        return truncatedText.join(' ');
-    }
-
-    function callApi(){
-
-    }
-
 
     useEffect(() => {
-        client.fetch(`*[_type=="post"] | order(publishedAt desc) [0...6]{
+        client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...9]{
             _id,
             title,
             slug,
@@ -81,24 +51,30 @@ function Blog(props) {
 
 
     async function fetchNextPage() {
-        console.log(searchTerm)
-        if (searchTerm !== null) {
+       
+        if (searchTerm || searchTerm !== '') {
             return [];
         }
         if (!lastIdRef.current) {
+            console.log('empty>>>>>',lastIdRef.current);
             return [];
         }
-
+    
         try {
             const data = await client.fetch(`
                 *[_type == "post" && (
                     publishedAt < $lastPublishedAt
                     || (publishedAt == $lastPublishedAt && _id < $lastId)
                 )] 
-                | order(publishedAt desc, _id desc) [0...3]{
+                | order(publishedAt desc, _id desc) [0...6]{
+                    _id,
                     title,
                     slug,
                     body,
+                    "author": author->{
+                        name,
+                        slug,
+                    },
                     publishedAt,
                     mainImage{
                         asset->{
@@ -110,20 +86,21 @@ function Blog(props) {
                 }`,
                 { lastPublishedAt: lastPublishedAtRef.current, lastId: lastIdRef.current }
             );
-
+    
             if (data.length > 0) {
                 lastPublishedAtRef.current = data[data.length - 1].publishedAt;
                 lastIdRef.current = data[data.length - 1]._id;
                 setPostData(prev => [...prev, ...data]);
-            } else {
+            }else{
                 lastIdRef.current = null;
             }
-
+          
             return data;
         } catch (error) {
             console.error('Error fetching next page:', error);
         }
     }
+    
 
 
     const handleInputChange = (event) => {
@@ -140,6 +117,10 @@ function Blog(props) {
         slug,
         publishedAt,
         body,
+        "author": author->{
+            name,
+            slug,
+        },
         mainImage{
             asset->{
                 _id,
@@ -187,7 +168,7 @@ function Blog(props) {
                     {(!loading && searchTerm !== null && postData.length === 0 ) ?( <p>No results found</p>): (  <div className="row">
                         {postData &&
                             postData.map((post, idx) => (
-                                <BlogItem post={post} />
+                                <BlogItem post={post} key={idx} />
                             ))
                         }
 

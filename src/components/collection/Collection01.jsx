@@ -23,7 +23,7 @@ function Collection01(props) {
                                 <div key={idx.id} className="col-lg-3 col-md-6 col-sm-6">
                                     <div className="tf-product">
                                         <div className="image">
-                                            <img src={idx.img} alt="Binabox" />
+                                            <img src={idx.img} alt="RACIIT" />
                                         </div>
                                         <h6 className="name"><Link to="/item-details">{idx.title}</Link></h6>
                                     </div>

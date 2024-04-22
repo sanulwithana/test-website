@@ -57,7 +57,7 @@ function Team(props) {
                                             <div className="slider-item">
                                                 <div className="tf-team ">
                                                     <div className="image">
-                                                        <img src={idx.img} alt="Binabox" />
+                                                        <img src={idx.img} alt="RACIIT" />
                                                     </div>
                                                     <h4 className="name"><Link to="/our-team">{idx.name}</Link></h4>
                                                     <p className="position">{idx.position}</p>

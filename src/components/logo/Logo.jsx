@@ -4,43 +4,43 @@ function Logo(props) {
     const [dataLogo] = useState([
         {
             id: 1,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 2,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 3,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 4,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 5,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 6,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 7,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 8,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 9,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
         {
             id: 10,
-            name: 'BINABOX'
+            name: 'RACIIT'
         },
     ])
     return (

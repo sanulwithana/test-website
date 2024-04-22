@@ -253,8 +253,8 @@ function BlogDetails(props) {
                                     </div> */}
 
                                     {/* <div className="image style-2">
-                                        <img className="mr20" src={img2} alt="Binabox" />
-                                        <img src={img3} alt="Binabox" />
+                                        <img className="mr20" src={img2} alt="RACIIT" />
+                                        <img src={img3} alt="RACIIT" />
                                     </div> */}
                                     {/* <div className="content-inner">
                                         <h4 className="title">NFTs Are Digital Assets That Represent Real-world Objects</h4>

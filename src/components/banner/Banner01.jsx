@@ -56,7 +56,7 @@ function Banner01(props) {
                                                     <h1 className="heading mb0">WITH</h1>
                                                     <div className="animate-contain">
                                                         <div className="animated-text">
-                                                            <span>Binabox</span>
+                                                            <span>RACIIT</span>
                                                             <span>Music</span>
                                                             <span>NFT</span>
                                                         
@@ -77,16 +77,16 @@ function Banner01(props) {
                                                
                                               
                                                     <div className="image">
-                                                        <img src={images[1]} alt="Binabox" className="img-slider-1" />
-                                                        <img src={images[2]} alt="Binabox" className="fadeInClass" />
+                                                        <img src={images[1]} alt="RACIIT" className="img-slider-1" />
+                                                        <img src={images[2]} alt="RACIIT" className="fadeInClass" />
                                                     </div>
                                                     <div className="image s1">
-                                                        <img src={images[0]} alt="Binabox" className="img-slider-1" />
-                                                        <img src={images[1]} alt="Binabox" className="fadeInClass" />
+                                                        <img src={images[0]} alt="RACIIT" className="img-slider-1" />
+                                                        <img src={images[1]} alt="RACIIT" className="fadeInClass" />
                                                     </div>
                                                     <div className="image s1">
-                                                        <img src={images[0]} alt="Binabox" className="img-slider-1" />
-                                                        <img src={images[1]} alt="Binabox" className="fadeInClass" />
+                                                        <img src={images[0]} alt="RACIIT" className="img-slider-1" />
+                                                        <img src={images[1]} alt="RACIIT" className="fadeInClass" />
                                                     </div>
 
                                                 </div>

@@ -40,7 +40,7 @@ function Login(props) {
                                                     <div className="slider-item">
                                                         <div className="tf-product ">
                                                             <div className="image">
-                                                                <img src={idx.img} alt="Binabox" />
+                                                                <img src={idx.img} alt="RACIIT" />
                                                             </div>
                                                             <h6 className="name"><Link to="/item-details">{idx.title}</Link></h6>
                                                         </div>
@@ -85,7 +85,7 @@ function Login(props) {
                                                     <div className="slider-item">
                                                         <div className="tf-product ">
                                                             <div className="image">
-                                                                <img src={idx.img} alt="Binabox" />
+                                                                <img src={idx.img} alt="RACIIT" />
                                                             </div>
                                                             <h6 className="name"><Link to="/item-details">{idx.title}</Link></h6>
                                                         </div>
@@ -116,7 +116,7 @@ function Login(props) {
                                                     <div className="slider-item">
                                                         <div className="tf-product ">
                                                             <div className="image">
-                                                                <img src={idx.img} alt="Binabox" />
+                                                                <img src={idx.img} alt="RACIIT" />
                                                             </div>
                                                             <h6 className="name"><Link to="/item-details">{idx.title}</Link></h6>
                                                         </div>

@@ -1,76 +1,95 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
-
-import { Accordion } from 'react-bootstrap-accordion';
-
-import { Link } from 'react-router-dom';
-import Footer from '../components/footer';
-
 import data from '../assets/fake-data/data-collection'
 import Icon from '../components/icon_svg/IconSvg';
 import Footer2 from '../components/footer/Footer2';
-
-
+import "../components/annual_report/styles.scss";
+import client from '../services/client'
+import { AutoTextSize } from 'auto-text-size'
+import Loading from '../components/loader/loader';
 
 function Awards(props) {
+    const [awardPageData, setAwardPageData] = useState(null);
+
+    useEffect(() => {
+        const query = `*[_type == "awardPage"] {
+            title,
+            "awards": awards[] {
+              description,
+              awardType
+            }
+          }`
+        client.fetch(query)
+            .then((data) => {
+            
+                setAwardPageData(data);
+             
+            })
+            .catch(console.error)
+    }, []); 
+
+    if(awardPageData === null){
+       return <Loading/>;
+    }
+
     return (
         <div className='page-collection'>
-            <PageTitle title='Awards' />
+            <PageTitle title='Awards' color="#3324ff" description={"Uniting hearts, Building dreams, Creating legacies"} />
 
-            <section className="tf-collection-inner">
-                {AwardItem()}
-                {AwardItem()}
-                {AwardItem()}
+            <section className="tf-container">
+            {awardPageData.map((award, index) => (
+          <AwardItem key={index} award={award} />
+        ))}
+             
             </section>
-                
+
             <Footer2 />
-            
+
         </div>
     );
 }
 
 export default Awards;
 
-export function AwardItem() {
-    return <div className="tf-container">
-        <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-            <h2 className="heading">2023/24</h2>
-        </div>
+export const AwardItem = (props) => {
+    console.log(props.award);
+    const {title , awards} = props.award;
+      // Define color variables
+      const colors = {
+        bronze: '#CD7F32',
+        silver: '#C0C0C0',
+        gold: '#FFD700'
+      };
+    
+      // Set color based on provided value or default to gold
 
-        <div className="row ">
-            <div className="col-lg-2 col-md-2">
+    
+    return (
+        <div className="tf-container">
+            <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '5rem' ,marginTop: "4rem", }}>
+                <h2 className="heading" style={{color:"#ffff"}}> {title}</h2>
             </div>
-            <div className="col-lg-9 col-md-8 ">
-                <div className="row">
-                <div className="row">
-                                {
-                                    data.slice(0,9).map(idx => (
-                                        <div key={idx.id} className="col-lg-3 col-md-6 col-sm-6 col-12 ">
-                                            <div className="tf-product">
-                                        
-                                                <div className="image">
-                                                <p  style={{color: "grey",position:'absolute',top:'7.6rem',maxWidth:"170px",left:"3.7rem", zIndex: 200 ,fontSize:'1.3rem',fontWeight:'500',textAlign:'center',lineHeight:'1.5rem'}}>the medal of goasddsa dasdsadassda assdsad dsadsasda ddd ddddd</p>
-                                <div className="image" style={{ marginBottom: '0.5rem' }}>
-                                   
-                                    <Icon color="#FFD700" />
-                                    {/* <img src={idx.img} alt="Binabox" /> */}
-                                </div>
-                                                   
-                                                </div>
-                                                <h6 className="name"><Link to="/item-details"> </Link></h6>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
 
+            <div className="row justify-content-center" style={{ gap: '10px' }}> {/* Reduced gap */}
+                {awards.map((item, idx) => (
+                    <div key={idx} className="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                        <div className="tf-product">
+                            <div className="image-wrapper">
+                                <div className="image">
+                                    <Icon color={ colors[item.awardType] || colors.gold} /> {/* Use your Icon component here */}
+                                    <div className='textSizeBox'>
+                                        <AutoTextSize style={{color: `${colors[item.awardType] || colors.gold}`,alignSelf:"center",fontWeight: "500"}} minFontSizePx={7} maxFontSizePx={26} mode='box'>{(item.description).toUpperCase()} </AutoTextSize>
+                                    </div>
+                                    {/* <p style={{fontSize :"2rem"}}>SA dsasasd asddsadsa </p> */}
+                                </div>
 
                             </div>
-
-
-                </div>
-
+                    
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
-
-    </div>;
+    );
 }
+

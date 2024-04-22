@@ -14,7 +14,7 @@ function Work02(props) {
                     <div className="row">   
                         <div className="col-md-12">
                             <div className="title-ss wow fadeInUp">
-                                <h3>HOW TO <span>BINABOX</span> WORK</h3>
+                                <h3>HOW TO <span>RACIIT</span> WORK</h3>
                             </div>
                         </div>
                         {
@@ -22,7 +22,7 @@ function Work02(props) {
                                 <div key={idx.id} className="col-xl-3 col-md-6 ">
                                     <div className="tf-work style-2 wow fadeInUp">
                                             <div className="image">
-                                                <img id="work-5" src={idx.img} alt="Binabox" />
+                                                <img id="work-5" src={idx.img} alt="RACIIT" />
                                             </div>
                                             <h5 className="step">STEP {idx.id}</h5>
                                             <h4 className="title"><Link to="#">{idx.title}</Link></h4>

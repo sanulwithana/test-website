@@ -40,7 +40,7 @@ function Partner(props) {
                 <div className="row">   
                     <div className="col-md-12 ">
                         <div className="tf-heading mb60 wow fadeInUp">
-                            <h2 className="heading"><span>BINABOX</span> PARTNER</h2>
+                            <h2 className="heading"><span>RACIIT</span> PARTNER</h2>
                         </div>
                     </div>
                     <div className="col-md-12 wow fadeInUp">
@@ -77,7 +77,7 @@ function Partner(props) {
                                         <SwiperSlide key={idx.id}>
                                             <div className="slider-item">
                                                 <div className="tf-partner">
-                                                    <img src={idx.img} alt="Binabox" />
+                                                    <img src={idx.img} alt="RACIIT" />
                                                 </div>
                                             </div>
                                         
@@ -125,7 +125,7 @@ function Partner(props) {
                                         <SwiperSlide key={idx.id}>
                                             <div className="slider-item">
                                                 <div className="tf-partner">
-                                                    <img src={idx.img} alt="Binabox" />
+                                                    <img src={idx.img} alt="RACIIT" />
                                                 </div>
                                             </div>
                                         
@@ -172,7 +172,7 @@ function Partner(props) {
                                         <SwiperSlide key={idx.id}>
                                             <div className="slider-item">
                                                 <div className="tf-partner">
-                                                    <img src={idx.img} alt="Binabox" />
+                                                    <img src={idx.img} alt="RACIIT" />
                                                 </div>
                                             </div>
                                         

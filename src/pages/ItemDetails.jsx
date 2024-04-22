@@ -19,7 +19,7 @@ function ItemDetails(props) {
                    <div className="row">
                         <div className="col-lg-6 col-md-12">
                             <div className="tf-item-detail-image">
-                                <img src={img} alt="Binabox" />
+                                <img src={img} alt="RACIIT" />
                              
                             </div>
                         </div>

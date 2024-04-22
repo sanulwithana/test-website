@@ -1,7 +1,8 @@
 @use '../../scss/' as *;
 .footer {
-  background: url('../../assets/images/background/bg-footer.jpg') center center no-repeat;
-  background-size: cover;
+//   background: url('../../assets/images/background/bg-footer.jpg') center center no-repeat;
+  background-image: -webkit-linear-gradient(rgba(52, 52, 52, 0.4),rgba(55, 55, 55, 0.883), );
+//   background-size: cover;
   .footer-inner {
       padding: 61px 0 40px;
   }
