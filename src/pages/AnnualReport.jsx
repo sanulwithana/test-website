@@ -14,6 +14,7 @@ function AnnualReport(props) {
             publishedAt,
             "reportFile": upload.file.asset->url,
             showReport,
+            youTubeAnnual,
             mainImage{
                 asset->{
                         _id,

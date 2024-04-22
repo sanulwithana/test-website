@@ -3,7 +3,7 @@ import React , {useState , useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-import logo from '../../assets/images/logo/logo-footer.png';
+import logo from '../../assets/images/logo/logo-footer.svg';
 
 
 function Footer2(props) {
@@ -68,16 +68,15 @@ function Footer2(props) {
                                 <div className="bottom">
                                 
                                    <div className="content-left">
-                                        <img src={logo} alt="Binabox" />
+                                        <img src={logo}  className='logo-dark' style={{width:"12rem"}} alt="RACIIT" />
                                         <p className="copy-right">Rotaract Club Of IIT {currentYear} - ALL rights reserved</p>
                                    </div>
 
                                     <ul className="menu-bottom">
                                         <li><Link to="/">Home</Link></li>
-                                        <li><Link to="/about-v1">About</Link></li>
-                                        <li><Link to="/roadmap-v1">Roadmap</Link></li>
-                                        <li><Link to="/our-team">Our Team</Link></li>
-                                        <li><Link to="/faq-v1">FAQs</Link></li>
+                                        <li><Link to="/annualreport">About Us</Link></li>
+                                        <li><Link to="/blog">Avenues</Link></li>
+                                        <li><Link to="/contact">Contact Us</Link></li>
                                     </ul>
                                 </div>
                             </div>

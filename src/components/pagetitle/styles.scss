@@ -2,8 +2,8 @@
 .tf-page-title {
     padding: 77px 0;
     text-align: center;
-    background: rgba(255, 255, 255, 0.3) center center no-repeat fixed;
-    background-size: cover;
+    // background: rgba(255, 255, 255, 0.085) center center no-repeat fixed;
+    // background-size: cover;
     position: relative;
 
     &::before {
@@ -49,7 +49,7 @@
                     transform: translateY(-50%);
                     right: 0;
                     width: 2px;
-                    height: 16px;
+                    height: 10px;
                     background-color:#888B8E ;
                 }
                 &:hover {

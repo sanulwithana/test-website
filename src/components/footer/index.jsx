@@ -63,7 +63,7 @@ function Footer(props) {
                             <div className="col-xl-4 col-lg-3 col-md-12">
                                 <div className="widget widget-infor">
                                     <div className="logo">
-                                        <img id="logo_footer" src={logo} alt="Binabox" />
+                                        <img id="logo_footer" src={logo} alt="RACIIT" />
                                     </div>
                                     <p className="content">We are the best way to check the rarity of NFT collection.</p>
                                 </div>
@@ -110,7 +110,7 @@ function Footer(props) {
                             <div className="col-md-12">
                                 <div className="bottom">
                                    
-                                    <p className="copy-right">BINABOX 2022 - ALL rights reserved</p>
+                                    <p className="copy-right">RACIIT 2022 - ALL rights reserved</p>
     
                                     <ul className="social-item">
                                         <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
