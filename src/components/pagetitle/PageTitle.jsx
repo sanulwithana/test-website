@@ -33,6 +33,7 @@ function PageTitle(props) {
     return (
         <section className="tf-page-title" style={{ backgroundImage: `linear-gradient(to right, ${firstColor}, ${secondColor})` }}>
     <div className="tf-containers" >
+        
         <div className="row">
             <div className="col-md-12">
                 <h2 className="page-title-heading" style={{ alignSelf: 'center' }}>{title.toUpperCase()}</h2>
