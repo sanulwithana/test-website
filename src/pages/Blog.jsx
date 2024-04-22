@@ -15,36 +15,6 @@ function Blog(props) {
     const lastPublishedAtRef = useRef(null);
     const lastIdRef = useRef(null);
 
-    function truncateBodyToThreeLines(body, maxLength = 120) {
-        let currentLength = 0;
-        let truncatedText = [];
-
-        for (let block of body) {
-            if (currentLength >= maxLength) {
-                break;
-            }
-
-            if (block._type === 'block' && block.style === 'normal') {
-                const text = block.children[0].text.trim();
-
-                if (currentLength + text.length <= maxLength) {
-                    truncatedText.push(text);
-                    currentLength += text.length;
-                } else {
-                    const availableChars = maxLength - currentLength;
-                    truncatedText.push(text.substring(0, availableChars) + '.....');
-                    break;
-                }
-            }
-        }
-
-        return truncatedText.join(' ');
-    }
-
-    function callApi(){
-
-    }
-
 
     useEffect(() => {
         client.fetch(`*[_type=="post"] | order(publishedAt desc, _id desc) [0...9]{

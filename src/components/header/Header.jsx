@@ -81,7 +81,7 @@ const Header = () => {
 
                                 <div className="header-right">
                                    
-                                    <DarkMode />
+                                    {/* <DarkMode /> */}
 
                                     {/* <Link to="#" className="tf-button connect" data-toggle="modal" data-target="#popup_bid"> <i className="icon-fl-wallet"></i><span>VOLUNTEER</span></Link> */}
                                     <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
