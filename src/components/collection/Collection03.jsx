@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, {  } from 'react';
 import PropTypes from 'prop-types';
-import client from '../../services/client'
 import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
