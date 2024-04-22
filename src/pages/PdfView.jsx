@@ -4,7 +4,6 @@ import client from '../services/client'
 import { useParams } from 'react-router-dom';
 
 import './PDFviEW/styles.scss';
-import Icon from '../components/icon_svg/IconSvg';
 import { Viewer, Worker, SpecialZoomLevel } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 import YouTubePlayer from 'react-player/youtube';

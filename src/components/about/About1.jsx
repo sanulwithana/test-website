@@ -19,19 +19,6 @@ function About1(props) {
         }
     )
 
-
-    const [dataCounter] = useState([
-        {
-            id: 1,
-            title: 'Total Membership',
-            number: '1000',
-        },
-        {
-            id: 2,
-            title: 'Projects Completed',
-            number: '100',
-        },
-    ])
     return (
         <section className="tf-section tf-about">
                 <div className="tf-container">

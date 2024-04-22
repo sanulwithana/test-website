@@ -6,7 +6,7 @@ import menus from '../../pages/menu';
 import './styles.scss';
 import logo from '../../assets/images/logo/logo.svg';
 
-import DarkMode from './DarkMode';
+// import DarkMode from './DarkMode';
 
 // import Button from '../button';
 

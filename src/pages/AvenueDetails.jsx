@@ -3,7 +3,6 @@ import React , {useState,useEffect,useRef} from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
 import Footer2 from '../components/footer/Footer2';
 import client from '../services/client'
-import { Link } from 'react-router-dom';
 import Button02 from '../components/button/Button02';
 import { useParams } from 'react-router-dom';
 import Loading from '../components/loader/loader';
