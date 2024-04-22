@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 
-import PageTitle from '../components/pagetitle/PageTitle';
 import Footer2 from '../components/footer/Footer2';
 
 import icon1 from '../assets/images/svg/loaction.svg'
 import icon2 from '../assets/images/svg/email.svg'
 import icon3 from '../assets/images/svg/phone.svg'
-import dataFaqs from '../assets/fake-data/data-faq';
-import Faqs from '../components/faqs/Faqs';
 function Contact(props) {
 
     const [name, setName] = useState('');

@@ -8,7 +8,7 @@ import Blog from "./Blog";
 
 import BlogDetails from "./BlogDetails";
 
-import Collection from "./Collection";
+// import Collection from "./Collection";
 import CommingSoon from "./CommingSoon";
 
 import Contact from "./Contact";
@@ -47,7 +47,7 @@ const routes = [
   // { path: '/faq-v1', component: <Faq01 />},
   // { path: '/faq-v2', component: <Faq02 />},
   // { path: '/our-team', component: <OurTeam />},
-  { path: '/collection', component: <Collection /> },
+  // { path: '/collection', component: <Collection /> },
   // { path: '/testimonial', component: <Testimonials />},
   // { path: '/item-details', component: <ItemDetails />},
   { path: '/comming-soon', component: <CommingSoon /> },

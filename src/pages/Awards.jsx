@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PageTitle from '../components/pagetitle/PageTitle';
-import data from '../assets/fake-data/data-collection'
 import Icon from '../components/icon_svg/IconSvg';
 import Footer2 from '../components/footer/Footer2';
 import "../components/annual_report/styles.scss";

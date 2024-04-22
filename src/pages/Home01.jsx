@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import dataAbout from '../assets/fake-data/data-about';
-import dataBanner from '../assets/fake-data/data-banner';
-import dataCollection from '../assets/fake-data/data-collection';
 
 import About1 from '../components/about/About1';
 import client from '../services/client'
