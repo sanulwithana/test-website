@@ -83,7 +83,8 @@ const BlogItem = ({ post}) => {
                             <path d="M5.83398 2.5L5.83398 5" stroke="#ED3659" strokeWidth="2" strokeLinecap="round" />
                             <path d="M14.166 2.5L14.166 5" stroke="#ED3659" strokeWidth="2" strokeLinecap="round" />
                         </svg>
-                        {getTimeDifference(post.publishedAt)}</span>
+                        <p> {getTimeDifference(post.publishedAt)}</p>
+                       </span>
 
                 </div>
 

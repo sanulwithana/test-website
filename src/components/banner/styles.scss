@@ -73,11 +73,11 @@
         .animated-text span {
             display: block;
             font-size: 72px;
-            font-weight: 400;
+            font-weight: 600;
             height: 100%;
             display: flex;
             align-items: center;
-            font-family: "Bakbak One", sans-serif;
+            font-family: "Poppins", sans-serif;
             text-transform: uppercase;
 
             @include mobile {
@@ -220,7 +220,7 @@
                     }
                     h6 {
                         font-family: 'Poppins';
-                        font-weight: 400;
+                        font-weight: 600;
                         font-size: 16px;
                         line-height: 26px;
                         color: #C2C3C5;
