@@ -236,7 +236,7 @@ textarea {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   line-height: 30px;
-  font-weight: 400;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -253,7 +253,7 @@ img {
 
 .text-p,
 p {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 strong,
@@ -644,7 +644,7 @@ input[type=search]::placeholder,
 input[type=tel]::placeholder,
 input[type=color]::placeholder {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 26px;
   color: var(--primary-color2);
 }
@@ -654,7 +654,7 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  font-family: "Bakbak One";
+  font-family: "Poppins";
   font-size: 16px;
   line-height: 24px;
   background-color: #ED3659;
@@ -716,8 +716,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Bakbak One", sans-serif;
-  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   text-rendering: optimizeLegibility;
 }
 
@@ -763,7 +763,7 @@ h6 {
   color: rgba(0, 0, 0, 0);
   transition: color 0.2s ease-in-out;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 28px;
 }
 
@@ -1191,11 +1191,11 @@ header.absolute {
   padding: 42px 36px 42px 0px;
 }
 #main-nav > ul > li > a {
-  font-family: "Bakbak One";
+  font-family: "Poppins";
   position: relative;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 600;
   display: block;
   color: var(--primary-color3);
   padding-right: 27px;
@@ -1256,8 +1256,8 @@ header.absolute {
 }
 #main-nav .sub-menu li a {
   display: block;
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   padding: 6px 20px;
@@ -1356,8 +1356,8 @@ header.absolute {
 
 #main-nav-mobi ul > li > a {
   color: var(--primary-color3);
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 16px;
   display: inline-block;
   font-size: 14px;
@@ -1663,8 +1663,8 @@ header.absolute {
   justify-content: center;
 }
 .tf-page-title .breadcrumbs li {
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   display: inline-block;
@@ -1739,7 +1739,7 @@ header.absolute {
 }
 .tf-pagination ul li a {
   font-family: "Poppins";
-  font-weight: 400;
+  font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: var(--primary-color13);
@@ -1907,7 +1907,7 @@ header.absolute {
 }
 .footer.style-2 .content {
   font-family: "Inter";
-  font-weight: 400;
+  font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: #C2C3C5;
@@ -2143,8 +2143,8 @@ header.absolute {
   position: absolute;
   top: 14px;
   right: 14px;
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 14px;
   line-height: 22px;
   color: #fff;
@@ -2169,8 +2169,8 @@ header.absolute {
 .tf-blog .tf-blog-item .meta > span {
   margin-right: 0px;
   padding-right: 8px;
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: #888B8E;
@@ -2209,8 +2209,8 @@ header.absolute {
 }
 .tf-blog .tf-blog-item .btn-readmore {
   display: inline-flex;
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: var(--primary-color9);
@@ -2275,8 +2275,8 @@ header.absolute {
   color: var(--primary-color3);
   background-color: var(--primary-color5);
   padding: 8px 10px;
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 14px;
   line-height: 22px;
 }
@@ -2359,8 +2359,8 @@ header.absolute {
 }
 .detail-inner .post-infor .content .name {
   color: var(--primary-color20);
-  font-family: "Bakbak One";
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
@@ -2647,7 +2647,7 @@ header.absolute {
 .side-bar .widget.widget-tag ul li a {
   font-size: 12px;
   line-height: 18px;
-  font-weight: 400;
+  font-weight: 600;
   padding: 8px 12px;
   background-color: var(--primary-color21);
   color: var(--primary-color14);

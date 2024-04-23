@@ -38,7 +38,7 @@
 
 body {
   font-family: "DM Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.4;
   position: relative;
@@ -1324,11 +1324,11 @@ body[data-magic-cursor=hide] .mouse-cursor {
   font-size: 18px;
 }
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.up {
-  font-weight: 400;
+  font-weight: 600;
   color: #ED3659;
 }
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td.down {
-  font-weight: 400;
+  font-weight: 600;
   color: #d33535;
 }
 .coin-list .coin-list__main .flat-tabs .content-tab .content-inner tbody tr td a.btn {
@@ -2037,12 +2037,12 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 .services-2 .services_image .user-card .content p {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 3px;
 }
 .services-2 .services_image .user-card .content .price span {
   margin-left: 15px;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
 }
 .services-2 .services_image .user-card .content .button {
@@ -2264,7 +2264,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   color: rgba(35, 38, 47, 0.87);
 }
 .testimonials .testimonials-box .bottom .info .content .position {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   letter-spacing: 0;
 }
@@ -2311,7 +2311,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 .testimonials-2 .left .swiper-pagination span {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .testimonials-2 .left .swiper-pagination .swiper-pagination-current {
   margin-right: -4px;
@@ -3477,7 +3477,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   font-size: 18px;
 }
 .buy-crypto .buy-crypto__main .main .form .form-field input::placeholder {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
 }
 .buy-crypto .buy-crypto__main .main .form .form-field input:focus-visible {
@@ -3952,7 +3952,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   margin-bottom: 2px;
 }
 .wallet .coin-list-wallet table.table tbody tr td span.boild.unit {
-  font-weight: 400;
+  font-weight: 600;
 }
 .wallet .coin-list-wallet table.table tbody tr td.asset {
   display: flex;
@@ -4280,7 +4280,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   font-size: 18px;
 }
 .wallet.sell .main .form .form-field input::placeholder {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
 }
 .wallet.sell .main .form .form-field input:focus-visible {
@@ -4680,7 +4680,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 .exchange .exchange__top .list li .unit {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 4px;
 }
 .exchange .exchange__content {
@@ -4955,7 +4955,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 }
 .user-profile .content-tab .profile form .bt .left ul li .text,
 .user-profile .content-tab .profile form .bt .right ul li .text {
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text);
 }
 .user-profile .content-tab .profile form .bt .right {
@@ -5088,7 +5088,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   margin: 0 10px;
 }
 .user-profile .content-tab .change-pass form .form-group label {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   color: var(--text);
   margin-bottom: 10px;
@@ -5693,7 +5693,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .page-title .breadcrumb li a {
   color: var(--text);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .page-title .breadcrumb li a:hover {
   color: var(--primary);
@@ -5821,7 +5821,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   font-size: 18px;
 }
 .main .form .form-field input::placeholder {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
 }
 .main .form .form-field input:focus-visible {
@@ -6192,7 +6192,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   margin-bottom: 12px;
 }
 .register .flat-tabs .content-tab form .form-group label span {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   color: #d33535;
   text-transform: capitalize;
@@ -6294,7 +6294,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
 .login .flat-tabs .content-tab form .form-check div .form-check-label {
   margin-bottom: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .login .flat-tabs .content-tab form .form-check p {
   color: #d33535;
@@ -6481,7 +6481,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   margin-bottom: 10px;
 }
 .footer .footer__main .widget-link ul li a {
-  font-weight: 400;
+  font-weight: 600;
 }
 .footer .footer__bottom {
   max-width: 1410px;
@@ -6586,7 +6586,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   outline: none;
 }
 .footer.style-2 .footer__main .footer-contact form input::placeholder {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   color: var(--text);
 }
@@ -6622,7 +6622,7 @@ body[data-magic-cursor=hide] .mouse-cursor {
   border-top: 1px solid var(--line);
 }
 .footer.style-2 .footer__bottom p {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.05px;
   text-transform: capitalize;

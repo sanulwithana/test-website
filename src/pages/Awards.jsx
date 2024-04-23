@@ -66,7 +66,7 @@ export const AwardItem = (props) => {
     return (
         <div className="tf-container">
             <div className="container" style={{ display: 'flex', justifyContent: 'center', marginBottom: '5rem' ,marginTop: "4rem", }}>
-                <h2 className="heading" style={{color:"#ffff"}}> {title}</h2>
+                <h2 className="awardheading"> {title}</h2>
             </div>
 
             <div className="row justify-content-center" style={{ gap: '10px' }}> {/* Reduced gap */}

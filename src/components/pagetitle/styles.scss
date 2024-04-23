@@ -24,8 +24,8 @@
         width: 100%;
         @include flex(center,center);
         li {
-            font-family: 'Bakbak One';
-            font-weight: 400;
+            font-family: 'Poppins';
+            font-weight: 600;
             font-size: 14px;
             line-height: 20px;
             display: inline-block;
@@ -62,6 +62,7 @@
     .page-title-heading {
         color: #fff ;
         margin-bottom: 12px;
+        font-weight: 500;
     }
     &.style-2 {
         .breadcrumbs {
