@@ -45,7 +45,7 @@
 
   @media (max-width: 768px) {
     margin: 0 1rem;
-    padding: 20px; // Adjusted padding for mobile
+    padding: 60px; // Adjusted padding for mobile
   }
 }
 
@@ -69,6 +69,7 @@
 .custom-title {
   margin-bottom: 15px;
   color: white;
+  font-weight: 600;
 
   @media (max-width: 768px) {
     font-size: 2.1rem;
@@ -102,6 +103,20 @@
     gap: 10px; // Adjust gap between items
   }
 
+  .awardheading {
+    color: #ffff;
+    font-weight: 500;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 2.9rem; // Adjust as per your requirement
+    
+    @media (max-width: 768px) { // Adjust breakpoint as per your design
+      font-size: 2.9rem; // Adjust font size for mobile
+      line-height: 1.9rem; // Adjust line height for mobile
+      text-align: left;
+    }
+  }
+  
   .tf-product {
     .image-wrapper {
       position: relative;
@@ -123,6 +138,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-55%, -65%);
+        @media (max-width: 768px) { // Adjust based on your preferred breakpoint
+          line-height: 2rem;
+        }
       }
 
       .image {

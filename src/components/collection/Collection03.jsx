@@ -112,7 +112,7 @@ function Collection03(props) {
                                             </Link>
                                         </div>
                                         <article className="tf-blog-item" style={{ backgroundColor: 'rgba(29, 35, 40, 0.2)', paddingLeft: '1rem', paddingTop: '2rem', paddingBottom: '2rem' }}>
-                                            <h4 className="title" style={{ color: '#FFFFFF' }}><Link to={"/blog"} style={{ color: '#FFFFFF' }}>{idx.title}</Link></h4>
+                                            <h4 className="title" style={{ color: '#FFFFFF',fontWeight:"600" }}><Link to={"/blog/" + idx.slug.current} key={idx.slug.current}>{idx.title}</Link></h4>
                                             <p className="content" style={{ fontSize: '1.5rem', overflow: 'hidden', color: '#FFFFFF', lineHeight: '1.5', maxHeight: '4.5rem', display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', paddingRight: '2rem' }}>
                                                 {truncateBodyToThreeLines(idx.body)}
                                             </p>
