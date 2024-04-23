@@ -214,7 +214,7 @@ function BlogDetails(props) {
                                     </div>
 
                                     <div className="title">
-                                        <h3 >{singlePost.current.title}</h3>
+                                        <h3 className='blogTitle' >{singlePost.current.title}</h3>
                                         <div className="category" style={{ backgroundColor: `${singlePost.current.category.color}` }}>{singlePost.current.category.title}</div>
                                     </div>
                                     <div className="meta">
@@ -232,7 +232,7 @@ function BlogDetails(props) {
                                             {getTimeDifference(singlePost.current.publishedAt)}</span>
                                     </div>
 
-                                    <div className="content-inner mb24" style={{ textAlign: 'justify' }}>
+                                    <div className="content-inner mb24" style={{ textAlign: window.innerWidth > 768 ? 'justify' : 'left' }}>
                                         <BlockContent blocks={singlePost.current.body} projectId={'eeksv8lg'} dataset={'production'} serializers={serializers} />
 
                                         {/* <Body blocks={singlePost.current.body}/> */}

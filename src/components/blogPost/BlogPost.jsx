@@ -64,7 +64,7 @@ const BlogItem = ({ post}) => {
                 </div>
 
 
-                <h3 className="title"><Link to={"/blog/" + post.slug.current} key={post.slug.current}>{post.title}</Link></h3>
+                <h3 className="blogTitle"><Link to={"/blog/" + post.slug.current} key={post.slug.current}>{post.title}</Link></h3>
                 <p className="content" style={{ fontSize: '1.5rem', overflow: 'hidden' }}>
                     {truncateBodyToThreeLines(post.body)}
                 </p>
