@@ -21,7 +21,7 @@
           }
           .content {
               font-size: 16px;
-              line-height: 26px;
+              line-height: 2rem;
               color: #FFFFFF;
           }
           @include tablet {
@@ -137,11 +137,12 @@
           color: #fff;
           font-size:3rem;
           font-weight: 600;
+          line-height: 3rem;
           margin-bottom: 10px;
       }
       .content {
           font-family: 'Inter';
-          font-weight: 600;
+          font-weight: 400;
           font-size:1.6rem;
 
           line-height: 28px;

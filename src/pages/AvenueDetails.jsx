@@ -35,7 +35,7 @@ function AvenueDetails() {
     
         // Fetch posts related to the category
         client
-          .fetch(`*[_type == "post" && references(*[_type == "category" && slug.current == "${slug}"]._id)]  | order(publishedAt desc, _id desc) [0...2]{
+          .fetch(`*[_type == "post" && references(*[_type == "category" && slug.current == "${slug}"]._id)]  | order(publishedAt desc, _id desc) [0...6]{
             _id,
             title,
             slug,
@@ -80,7 +80,7 @@ function AvenueDetails() {
                     publishedAt < $lastPublishedAt
                     || (publishedAt == $lastPublishedAt && _id < $lastId)
                 )] 
-                | order(publishedAt desc, _id desc) [0...1]{
+                | order(publishedAt desc, _id desc) [0...3]{
                     _id,
                     title,
                     slug,
