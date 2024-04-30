@@ -209,6 +209,8 @@
                 margin-bottom: 25px;
             }
             .counter-wrap {
+                justify-content: center;
+            align-items: center;
                 margin-bottom: 47px;
                 @include flexitem;
                 .tf-counter {

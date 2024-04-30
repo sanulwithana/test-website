@@ -64,7 +64,7 @@ const Header = () => {
                         key={idx}
                         onClick={() => {
                             handleDropdown(idx)
-                            handleMenuActive(false);
+                            // handleMenuActive(false);
                         }}
                         className={`menu-item ${
                           data.namesub ? 'menu-item-has-children' : ''

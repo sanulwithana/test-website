@@ -8,13 +8,15 @@
 
     &::before {
         content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
+        position: relative;
+        // left: 0;
+        // top: 0;
+        justify-self: center;
         width: 100%;
         height: 100%;
+        text-align: center;
 
-        background-color: rgba(20, 20, 20, 0.608);
+        // background-color: rgba(20, 20, 20, 0.308);
 
     }
     &.style-2 {

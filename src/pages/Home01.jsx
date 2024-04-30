@@ -90,7 +90,7 @@ function Home01(props) {
       {/* <Logo /> */}
       <About1 data={catogaries} stats={stats} />
       <div className="tf-heading wow fadeInUp">
-        <h2 className="heading" style={{fontWeight:"500"}}>OUR FEATURED PROJECTS</h2>
+        <h2 className="heading" style={{fontWeight:"600"}}>OUR FEATURED PROJECTS</h2>
       </div>
       <div className='blog-container'>
       <Collection03 data={featuredPosts} />
