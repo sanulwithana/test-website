@@ -24,7 +24,7 @@ function About1(props) {
 
     const [dataBlock] = useState(
         {
-            heading: 'WHO WE ARE & WHAT WE DO',
+            heading: 'WHO WE ARE & WHAT WE ARE DOING',
             desc: 'We are part of an international organization of young professionals and students ages 18 to 30 that are committed to service and leadership in their communities and abroad. Established in 2010 under the Rotary Club of PanColombo, Rotaract Club of IIT is a club united with global network of young people who are changing the world with clubs in over 160 countries that have committed their leadership skills to community service.'
 
         }
